@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 230 100% 97%;
+    --foreground: 234 36% 17%;
+    --card: 0 0% 100% / 0.55;
+    --card-foreground: 234 36% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 234 36% 17%;
+    --primary: 228 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 67% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 230 100% 93%;
+    --muted-foreground: 237 14% 45%;
+    --accent: 22 100% 67%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 230 100% 93%;
+    --input: 230 100% 93%;
+    --ring: 228 84% 60%;
+    --chart-1: 228 84% 60%;
+    --chart-2: 160 67% 52%;
+    --chart-3: 22 100% 67%;
+    --chart-4: 228 84% 73%;
+    --chart-5: 234 36% 17%;
+    --radius: 1rem;
+    --sidebar-background: 234 40% 98%;
+    --sidebar-foreground: 234 36% 17%;
+    --sidebar-primary: 228 84% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 100% 93%;
+    --sidebar-accent-foreground: 234 36% 17%;
+    --sidebar-border: 230 100% 93%;
+    --sidebar-ring: 228 84% 60%;
+
+    --cobalt: #4361EE;
+    --cobalt-deep: #3248D0;
+    --cobalt-light: #6B83F5;
+    --ice: #EEF1FF;
+    --ice-deep: #DDE3FF;
+    --frost: #F7F8FF;
+    --ink: #1A1D3B;
+    --steel: #5E6388;
+    --tangerine: #FF8A56;
+    --teal: #2EC4A0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(170deg, #DDE3FF 0%, #EEF1FF 25%, #F7F8FF 55%, #FFFFFF 100%) !important;
+    background-attachment: fixed;
+    color: #1A1D3B;
+    min-height: 100vh;
+  }
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(67, 97, 238, 0.06);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(67, 97, 238, 0.12);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(67, 97, 238, 0.06);
+}
+
+/* Ticker animation */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker-scroll 35s linear infinite;
+  width: max-content;
+}
+
+/* Methodology floating animation */
+@keyframes methodology-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes methodology-float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+@keyframes methodology-wave {
+  0% {
+    transform: scaleY(0.4);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.methodology-pulse {
+  animation: methodology-pulse-anim 2s ease-in-out infinite;
+}
+
+@keyframes methodology-pulse-anim {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes call-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Selection */
+::selection {
+  background: #DDE3FF;
+  color: #1A1D3B;
+}
+
+/* Range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #DDE3FF;
+  border-radius: 6px;
+  outline: none;
+  height: 6px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #4361EE;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(67,97,238,0.4);
+  border: 3px solid white;
+}

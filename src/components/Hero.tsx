@@ -1,0 +1,291 @@
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+
+const chatMessages = [
+  { type: 'user', text: 'How are Emma, Aryan, and Tyler doing today?' },
+  { type: 'ai', text: 'Emma is in the 94th percentile. Aryan and Tyler show significant growth in quantitative reasoning benchmarks.' },
+  { type: 'chart', data: [
+    { name: 'Emma', pct: 65, growth: '+12.4%' },
+    { name: 'Aryan', pct: 92, growth: '+9.1%' },
+    { name: 'Tyler', pct: 78, growth: '+7.8%' },
+  ]},
+  { type: 'user', text: "How is Emma's growth compared to district medians?" },
+  { type: 'ai', text: "Emma is currently in the 94th percentile. Her growth rate is 2.3x the district median across all assessed subjects." },
+]
+
+export default function Hero() {
+  return (
+    <main id="platform" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Animated gradient mesh bg */}
+      <div className="absolute inset-0 gradient-mesh -z-10" />
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary-light/40 via-transparent to-transparent pointer-events-none -z-10" />
+
+      <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center py-12 lg:py-0">
+        {/* Left Content */}
+        <div className="lg:col-span-5 z-10 space-y-8">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 bg-primary-light text-primary px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
+          >
+            <span className="relative w-2 h-2 rounded-full bg-primary pulse-ring" />
+            Private Beta — In Schools Now
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-5xl md:text-[76px] leading-[0.95] text-navy tracking-tight font-normal"
+            style={{ fontFamily: "'Instrument Serif', serif" }}
+          >
+            True Learning,{' '}
+            <br />
+            Accelerated by{' '}
+            <motion.span
+              className="italic gradient-text"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Intelligence.
+            </motion.span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-4"
+          >
+            <h2 className="text-lg font-semibold text-navy leading-tight">
+              Your School Data. One Unified Thread.
+            </h2>
+            <p className="text-base leading-relaxed text-muted max-w-lg">
+              We ingest and synthesize data from your SIS, LMS, and CRM to
+              uncover invisible patterns — empowering you to take action
+              right from a text or call.
+            </p>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.55 }}
+            className="flex flex-wrap items-center gap-4 pt-2"
+          >
+            <a
+              href="https://calendly.com/riaankumar/kritikos-demo"
+              className="group relative bg-primary text-white px-8 py-3.5 rounded-full font-medium text-sm hover:shadow-lg hover:shadow-primary/25 transition-all active:scale-95 shimmer-effect"
+            >
+              Request Access
+            </a>
+            <a
+              href="#products"
+              className="bg-primary-light text-primary px-8 py-3.5 rounded-full font-medium text-sm hover:bg-blue-100 transition-all active:scale-95 flex items-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              See How It Works
+            </a>
+          </motion.div>
+
+          {/* Trust badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="flex items-center gap-6 pt-2"
+          >
+            <div className="hidden sm:flex items-center gap-2 text-xs text-muted">
+              <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              Live in under 2 weeks
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Column — Animated iPhone */}
+        <motion.div
+          initial={{ opacity: 0, x: 60, rotateY: -25 }}
+          animate={{ opacity: 1, x: 0, rotateY: -15 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="lg:col-span-7 relative flex justify-center lg:justify-end perspective-2000"
+        >
+          <AnimatedIPhone />
+        </motion.div>
+      </div>
+    </main>
+  )
+}
+
+function AnimatedIPhone() {
+  const [visibleMessages, setVisibleMessages] = useState<number[]>([])
+  const [typingVisible, setTypingVisible] = useState(false)
+
+  useEffect(() => {
+    const timers: ReturnType<typeof setTimeout>[] = []
+    let cumDelay = 1200
+
+    chatMessages.forEach((_, i) => {
+      // Show typing indicator before each message
+      timers.push(setTimeout(() => setTypingVisible(true), cumDelay))
+      cumDelay += 800 + Math.random() * 400
+
+      // Show message, hide typing
+      timers.push(setTimeout(() => {
+        setTypingVisible(false)
+        setVisibleMessages(prev => [...prev, i])
+      }, cumDelay))
+      cumDelay += 400
+    })
+
+    return () => timers.forEach(clearTimeout)
+  }, [])
+
+  return (
+    <div className="relative w-[320px] h-[660px] sm:w-[340px] sm:h-[690px] rotate-y-iphone animate-float" style={{ animationDuration: '8s' }}>
+      {/* Glow behind phone */}
+      <div className="absolute -inset-8 bg-primary/5 rounded-[5rem] blur-3xl -z-10" />
+
+      {/* Titanium Frame */}
+      <div className="absolute inset-0 rounded-[3.8rem] titanium-frame p-[4px]">
+        <div className="absolute inset-[4px] rounded-[3.6rem] iphone-screen-border p-[10px]">
+          <div className="w-full h-full bg-black rounded-[3rem] overflow-hidden relative flex flex-col">
+            {/* Dynamic Island */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[90px] h-[28px] bg-black rounded-full z-40 flex items-center justify-end px-3">
+              <div className="w-2 h-2 rounded-full bg-blue-500/30 blur-[1px]" />
+            </div>
+
+            {/* Status Bar */}
+            <div className="flex justify-between items-center px-8 pt-14 pb-2">
+              <span className="text-[11px] text-zinc-400 font-medium">9:41</span>
+              <div className="flex gap-1 items-center">
+                <div className="flex gap-[2px]">
+                  {[4,6,8,10].map(h => <div key={h} className="w-[3px] bg-white rounded-full" style={{ height: h }} />)}
+                </div>
+                <svg className="w-3 h-3 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2" /><rect x="20" y="9" width="3" height="6" rx="1" /></svg>
+              </div>
+            </div>
+
+            {/* Chat Header */}
+            <div className="flex flex-col items-center space-y-1 pb-3 border-b border-zinc-800/50">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary/20">
+                K
+              </div>
+              <span className="text-[11px] text-zinc-400 font-medium">Kritikos AI</span>
+            </div>
+
+            {/* Messages */}
+            <div className="flex-1 flex flex-col px-3 py-3 space-y-3 overflow-hidden">
+              {chatMessages.map((msg, i) => {
+                if (!visibleMessages.includes(i)) return null
+
+                if (msg.type === 'user') {
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8, y: 12 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="self-end max-w-[82%] bg-primary text-white px-3.5 py-2 rounded-[1.2rem] rounded-tr-[0.3rem] text-[12px] leading-snug font-medium"
+                    >
+                      {msg.text}
+                    </motion.div>
+                  )
+                }
+
+                if (msg.type === 'ai') {
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8, y: 12 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="self-start max-w-[88%] bg-[#1C1C1E] text-zinc-100 px-3.5 py-2.5 rounded-[1.2rem] rounded-tl-[0.3rem] text-[12px] leading-snug border border-white/5"
+                    >
+                      {msg.text}
+                    </motion.div>
+                  )
+                }
+
+                if (msg.type === 'chart' && msg.data) {
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8, y: 12 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="self-start w-[85%] bg-[#1C1C1E] p-4 rounded-[1.2rem] border border-white/5 space-y-3"
+                    >
+                      <div className="flex justify-between items-end h-20 gap-2">
+                        {msg.data.map((s, si) => (
+                          <div key={s.name} className="flex-1 flex flex-col items-center gap-1.5">
+                            <div className="w-full bg-zinc-800 rounded-t-md relative overflow-hidden" style={{ height: `${s.pct}%` }}>
+                              <motion.div
+                                initial={{ height: 0 }}
+                                animate={{ height: '100%' }}
+                                transition={{ duration: 0.8, delay: si * 0.15, ease: 'easeOut' }}
+                                className={`absolute bottom-0 w-full rounded-t-md ${si === 0 ? 'bg-primary/50' : si === 1 ? 'bg-primary' : 'bg-primary/70'}`}
+                              />
+                            </div>
+                            <span className="text-[8px] text-zinc-500 font-medium">{s.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="border-t border-zinc-800/50 pt-2 flex justify-between items-center">
+                        <span className="text-[9px] text-zinc-400">Quantitative Growth</span>
+                        <span className="text-[9px] text-primary font-bold">+18.4%</span>
+                      </div>
+                    </motion.div>
+                  )
+                }
+
+                return null
+              })}
+
+              {/* Typing indicator */}
+              {typingVisible && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="self-start bg-[#1C1C1E] px-4 py-2.5 rounded-[1.2rem] rounded-tl-[0.3rem] border border-white/5"
+                >
+                  <div className="flex gap-1 items-center">
+                    {[0, 200, 400].map(d => (
+                      <div key={d} className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-pulse" style={{ animationDelay: `${d}ms` }} />
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </div>
+
+            {/* iMessage bar */}
+            <div className="px-3 pb-2">
+              <div className="flex items-center gap-2 bg-zinc-900 rounded-full px-4 py-2 border border-zinc-800">
+                <span className="text-[11px] text-zinc-600 flex-1">iMessage</span>
+                <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" /></svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Home bar */}
+            <div className="h-1.5 w-32 bg-zinc-800/80 rounded-full self-center mb-2.5" />
+          </div>
+        </div>
+
+        {/* Physical Buttons */}
+        <div className="absolute top-[105px] -left-[2px] w-[3px] h-8 titanium-button rounded-l-[1px]" />
+        <div className="absolute top-[155px] -left-[2px] w-[3px] h-14 titanium-button rounded-l-[1px]" />
+        <div className="absolute top-[222px] -left-[2px] w-[3px] h-14 titanium-button rounded-l-[1px]" />
+        <div className="absolute top-[185px] -right-[2px] w-[3px] h-20 titanium-button rounded-r-[1px]" />
+      </div>
+
+      {/* Glare */}
+      <div className="absolute inset-0 rounded-[3.8rem] pointer-events-none border border-white/10 z-50" />
+    </div>
+  )
+}
