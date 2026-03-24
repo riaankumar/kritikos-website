@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
-const links = ['Platform', 'Products', 'Districts', 'Trial']
+const links = ['Platform', 'Products', 'Integrations', 'Trial']
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)

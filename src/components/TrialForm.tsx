@@ -28,12 +28,12 @@ export default function TrialForm() {
             className="space-y-8"
           >
             <div>
-              <span className="text-xs font-semibold tracking-widest uppercase text-muted mb-4 block">Private beta</span>
+              <span className="text-xs font-semibold tracking-widest uppercase text-muted mb-4 block">Pilot program</span>
               <h2 className="text-4xl md:text-5xl text-navy tracking-tight" style={{ fontFamily: "'Instrument Serif', serif" }}>
-                Request a<br />free trial.
+                Start a pilot<br />in your school.
               </h2>
               <p className="text-muted text-base mt-4 max-w-md">
-                Tell us about your district and school. We'll review your application and get back to you within 48 hours.
+                Tell us about your school. We'll review your application and get back to you within 48 hours.
               </p>
             </div>
 
@@ -140,7 +140,7 @@ export default function TrialForm() {
                   type="submit"
                   className="w-full bg-primary text-white py-4 rounded-xl font-medium text-sm hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 shimmer-effect"
                 >
-                  Request Free Trial
+                  Start Your Pilot
                   <ArrowRight size={16} />
                 </button>
               </form>
