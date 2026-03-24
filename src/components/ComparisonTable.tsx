@@ -35,7 +35,7 @@ const rows = [
 
 export default function ComparisonTable() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section id="features" className="py-24 md:py-32 bg-white">
       <div className="max-w-screen-xl mx-auto px-6 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
