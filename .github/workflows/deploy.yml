@@ -3,7 +3,7 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main   
+      - main
       - dev
   workflow_dispatch:
 
@@ -14,20 +14,14 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Gets history so we can swap the identity properly
+          fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-      
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'npm'
 
-      # 1. Identity Swap: Overwrite the runner's git config with the owner's info
       - name: Set Git Identity to Owner
         run: |
           git config --global user.email "riaankumar@berkeley.edu"
@@ -36,26 +30,21 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel
 
-      # 2. Scrub Git Metadata: This is the "Safety" step. 
-      # By moving the .git folder, Vercel can't scan your personal push history.
       - name: Hide Git Metadata from Vercel
         run: mv .git .git_backup
 
-      # 3. Pull Vercel Environment (Uses the VERCEL_TOKEN to authorize)
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      # 4. Build locally on the GitHub Runner
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      # 5. Deploy the finished build (Bypasses author permission checks)
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
