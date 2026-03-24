@@ -10,7 +10,7 @@ import CustomerStories from './components/CustomerStories'
 import Calculator from './components/Calculator'
 import Integrations from './components/Integrations'
 import FAQ from './components/FAQ'
-import Districts from './components/Districts'
+
 import TrialForm from './components/TrialForm'
 import Footer from './components/Footer'
 
@@ -29,7 +29,7 @@ export default function App() {
       <Calculator />
       <Integrations />
       <FAQ />
-      <Districts />
+
       <TrialForm />
       <Footer />
     </div>

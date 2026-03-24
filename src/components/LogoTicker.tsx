@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion'
 
 const logos = [
-  { name: 'Canvas', src: 'https://usekritikos.com/logos/canvas.webp' },
-  { name: 'Google Classroom', src: 'https://usekritikos.com/logos/google-classroom.png' },
-  { name: 'PowerSchool', src: 'https://usekritikos.com/logos/powerschool.webp' },
-  { name: 'Clever', src: 'https://usekritikos.com/logos/clever.png' },
-  { name: 'ClassLink', src: 'https://usekritikos.com/logos/classlink.png' },
-  { name: 'Infinite Campus', src: 'https://usekritikos.com/logos/infinite-campus.png' },
-  { name: 'Schoology', src: 'https://usekritikos.com/logos/schoology.png' },
-  { name: 'Microsoft Teams', src: 'https://usekritikos.com/logos/teams.webp' },
-  { name: 'Gmail', src: 'https://usekritikos.com/logos/gmail.png' },
-  { name: 'Slack', src: 'https://usekritikos.com/logos/slack.png' },
-  { name: 'Notion', src: 'https://usekritikos.com/logos/notion.png' },
+  { name: 'Canvas', src: '/logos/canvas.webp' },
+  { name: 'Google Classroom', src: '/logos/google-classroom.png' },
+  { name: 'PowerSchool', src: '/logos/powerschool.webp' },
+  { name: 'Clever', src: '/logos/clever.png' },
+  { name: 'ClassLink', src: '/logos/classlink.png' },
+  { name: 'Infinite Campus', src: '/logos/infinite-campus.png' },
+  { name: 'Schoology', src: '/logos/schoology.png' },
+  { name: 'Microsoft Teams', src: '/logos/teams.webp' },
+  { name: 'Gmail', src: '/logos/gmail.png' },
+  { name: 'Slack', src: '/logos/slack.png' },
+  { name: 'Notion', src: '/logos/notion.png' },
 ]
 
 export default function LogoTicker() {
