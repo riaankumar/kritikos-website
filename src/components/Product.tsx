@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageSquare, GraduationCap, BarChart3, Building2 } from 'lucide-react'
+import IPhoneFrame from './IPhoneFrame'
 
 const tabs = [
   {
@@ -131,33 +132,25 @@ export default function Product() {
               </p>
             </div>
 
-            {/* Animated Chat Demo */}
-            <div className="bg-navy rounded-3xl p-6 shadow-2xl shadow-navy/10 glow-primary">
-              <div className="flex items-center gap-3 mb-5 pb-4 border-b border-white/5">
-                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold">K</div>
-                <div>
-                  <div className="text-white text-sm font-medium">Kritikos AI</div>
-                  <div className="text-zinc-500 text-xs">Active now</div>
-                </div>
-              </div>
-
-              <div className="space-y-3 min-h-[280px]">
+            {/* Animated Chat Demo — iPhone */}
+            <div className="flex justify-center">
+              <IPhoneFrame>
                 {tabs[activeTab].messages.map((msg, i) => (
                   <motion.div
                     key={`${activeTab}-${i}`}
-                    initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                    initial={{ opacity: 0, scale: 0.8, y: 12 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: i * 0.15 }}
-                    className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-[13px] leading-snug ${
+                    transition={{ duration: 0.35, delay: i * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className={`max-w-[82%] px-3.5 py-2 text-[12px] leading-snug ${
                       msg.type === 'user'
-                        ? 'self-end ml-auto bg-primary text-white rounded-tr-sm'
-                        : 'bg-white/5 text-zinc-200 rounded-tl-sm border border-white/5'
+                        ? 'self-end bg-primary text-white rounded-[1.2rem] rounded-tr-[0.3rem] font-medium'
+                        : 'self-start bg-[#1C1C1E] text-zinc-100 rounded-[1.2rem] rounded-tl-[0.3rem] border border-white/5'
                     }`}
                   >
                     {msg.text}
                   </motion.div>
                 ))}
-              </div>
+              </IPhoneFrame>
             </div>
           </motion.div>
         </AnimatePresence>

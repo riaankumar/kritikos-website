@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageSquare, Phone, Brain, BarChart3, Bell, FileText } from 'lucide-react'
+import IPhoneFrame from './IPhoneFrame'
 
 const features = [
   {
@@ -147,8 +148,8 @@ export default function FeatureShowcase() {
             })}
           </div>
 
-          {/* Right: animated preview */}
-          <div className="lg:col-span-7">
+          {/* Right: animated iPhone preview */}
+          <div className="lg:col-span-7 flex justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -156,42 +157,34 @@ export default function FeatureShowcase() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="bg-navy rounded-3xl p-8 md:p-10 shadow-2xl shadow-navy/10 glow-primary"
               >
-                {/* Header */}
-                <div className="mb-6">
-                  <h3 className="text-xl text-white font-semibold mb-2" style={{ fontFamily: "'Instrument Serif', serif" }}>
-                    {features[active].title}
-                  </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
-                    {features[active].detail}
-                  </p>
-                </div>
-
-                {/* Chat simulation */}
-                <div className="bg-black/30 rounded-2xl p-5 space-y-3 border border-white/5">
-                  <div className="flex items-center gap-2 pb-3 border-b border-white/5">
-                    <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-white text-[10px] font-bold">K</div>
-                    <span className="text-xs text-zinc-400 font-medium">Kritikos AI</span>
-                    <span className="ml-auto text-[10px] text-zinc-600">now</span>
+                <IPhoneFrame>
+                  {/* Feature title inside phone */}
+                  <div className="px-1 pb-2 border-b border-zinc-800/50 mb-1">
+                    <h3 className="text-[13px] text-white font-semibold" style={{ fontFamily: "'Instrument Serif', serif" }}>
+                      {features[active].title}
+                    </h3>
+                    <p className="text-[10px] text-zinc-500 leading-snug mt-0.5">
+                      {features[active].detail.slice(0, 100)}...
+                    </p>
                   </div>
 
                   {mockupMessages[features[active].mockup]?.map((msg, i) => (
                     <motion.div
                       key={`${active}-${i}`}
-                      initial={{ opacity: 0, scale: 0.92, y: 8 }}
+                      initial={{ opacity: 0, scale: 0.8, y: 12 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ duration: 0.25, delay: i * 0.12 }}
-                      className={`max-w-[85%] px-3.5 py-2 rounded-2xl text-[12px] leading-snug ${
+                      transition={{ duration: 0.25, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className={`max-w-[82%] px-3.5 py-2 text-[12px] leading-snug ${
                         msg.type === 'user'
-                          ? 'self-end ml-auto bg-primary text-white rounded-tr-sm'
-                          : 'bg-white/5 text-zinc-200 rounded-tl-sm border border-white/5'
+                          ? 'self-end bg-primary text-white rounded-[1.2rem] rounded-tr-[0.3rem] font-medium'
+                          : 'self-start bg-[#1C1C1E] text-zinc-100 rounded-[1.2rem] rounded-tl-[0.3rem] border border-white/5'
                       }`}
                     >
                       {msg.text}
                     </motion.div>
                   ))}
-                </div>
+                </IPhoneFrame>
               </motion.div>
             </AnimatePresence>
           </div>
