@@ -5,16 +5,16 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: 'How does Kritikos integrate with our existing tools?',
-    a: 'Kritikos connects to your SIS (PowerSchool, Infinite Campus), LMS (Canvas, Google Classroom, Schoology), and communication tools via secure APIs and roster sync through Clever or ClassLink. No data migration needed — we layer on top of your existing stack.',
+    a: 'Kritikos connects to your SIS (PowerSchool, Infinite Campus), LMS (Canvas, Google Classroom, Schoology), and communication tools via secure APIs and roster sync through Clever or ClassLink. No data migration needed. We layer on top of your existing stack.',
   },
 
   {
     q: 'How long does setup take?',
-    a: 'Most schools go live in under 2 weeks. We handle the integration setup — your IT team just authorizes the API connections. There\'s zero migration required since Kritikos reads from your existing tools.',
+    a: 'Most schools go live in under 2 weeks. We handle the integration setup. Your IT team just authorizes the API connections. There\'s zero migration required since Kritikos reads from your existing tools.',
   },
   {
     q: 'What makes Kritikos different from other EdTech platforms?',
-    a: 'Most EdTech tools add another dashboard to manage. Kritikos brings your data to where you already are — your text messages and phone calls. We unify fragmented data sources into one knowledge graph and surface actionable insights proactively.',
+    a: 'Most EdTech tools add another dashboard to manage. Kritikos brings your data to where you already are: your text messages and phone calls. We unify fragmented data sources into one knowledge graph and surface actionable insights proactively.',
   },
   {
     q: 'Do teachers need to learn new software?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: 'What does the student Companion do?',
-    a: 'The student Companion is a daily text that tells each student exactly what\'s due today across all their classes. It also offers Socratic tutoring — guiding students through problems with questions rather than giving answers, building genuine reasoning skills.',
+    a: 'The student Companion is a daily text that tells each student exactly what\'s due today across all their classes. It also offers Socratic tutoring, guiding students through problems with questions rather than giving answers, building genuine reasoning skills.',
   },
   {
     q: 'How is Kritikos priced?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'Can administrators get district-wide analytics?',
-    a: 'Yes. Administrators can ask any question in natural language — "Show me attendance trends for 9th grade" or "Which interventions are working?" — and get instant, shareable dashboards synthesized from all connected data sources.',
+    a: 'Yes. Administrators can ask any question in natural language ("Show me attendance trends for 9th grade" or "Which interventions are working?") and get instant, shareable dashboards synthesized from all connected data sources.',
   },
 ]
 

@@ -53,7 +53,7 @@ const tabs = [
     body: 'Connect all your existing tools into one thread. Zero migration, zero IT drain. Go live in under 2 weeks.',
     messages: [
       { type: 'user', text: "How many tools does Jefferson Elementary currently use?" },
-      { type: 'ai', text: "Jefferson Elementary has 14 active EdTech tools. Canvas and PowerSchool have the highest usage. 4 tools show <10% adoption — potential candidates for consolidation." },
+      { type: 'ai', text: "Jefferson Elementary has 14 active EdTech tools. Canvas and PowerSchool have the highest usage. 4 tools show <10% adoption, potential candidates for consolidation." },
       { type: 'user', text: "Calculate potential savings if we consolidate." },
       { type: 'ai', text: "Consolidating 4 low-adoption tools saves ~$42,000/year in licensing and 8.5 hours/week in admin overhead. Want me to draft a recommendation report?" },
     ],

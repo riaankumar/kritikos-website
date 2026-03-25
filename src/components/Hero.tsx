@@ -31,7 +31,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-primary-light text-primary px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
           >
             <span className="relative w-2 h-2 rounded-full bg-primary pulse-ring" />
-            Private Beta — In Schools Now
+            Private Beta · In Schools Now
           </motion.div>
 
           <motion.h1
@@ -65,7 +65,7 @@ export default function Hero() {
             </h2>
             <p className="text-base leading-relaxed text-muted max-w-lg">
               We ingest and synthesize data from your SIS, LMS, and CRM to
-              uncover invisible patterns — empowering you to take action
+              uncover invisible patterns, empowering you to take action
               right from a text or call.
             </p>
           </motion.div>

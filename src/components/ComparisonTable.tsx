@@ -4,7 +4,7 @@ const rows = [
   {
     category: 'Morning Workflow',
     statusQuo: 'Log into 4-6 platforms before class: PowerSchool for attendance, Canvas for grades, Google Classroom for submissions, IEP tracker, email for parents.',
-    kritikos: 'Receive one morning text with everything: flagged students, parent emails drafted, assignments due, and behavior notes — reply to act.',
+    kritikos: 'Receive one morning text with everything: flagged students, parent emails drafted, assignments due, and behavior notes. Reply to act.',
   },
   {
     category: 'Parent Communication',
@@ -19,7 +19,7 @@ const rows = [
   {
     category: 'Data Integration',
     statusQuo: 'Each tool is a silo. SIS doesn\'t talk to LMS. CRM doesn\'t talk to IEP tracker. No unified student picture.',
-    kritikos: 'Canvas, PowerSchool, Google Classroom, IEP systems — all ingested into one knowledge graph. Every data point connected.',
+    kritikos: 'Canvas, PowerSchool, Google Classroom, IEP systems, all ingested into one knowledge graph. Every data point connected.',
   },
   {
     category: 'Intervention Tracking',
