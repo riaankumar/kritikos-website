@@ -8,8 +8,8 @@ const tabs = [
     id: 'teachers',
     icon: MessageSquare,
     label: 'For Teachers',
-    headline: 'Your morning brief, delivered as a text.',
-    body: 'Every morning, get a text summary of which students need help and ready-to-send draft emails for parents. Call to log notes hands-free.',
+    headline: 'Your student rundown, delivered as a text.',
+    body: 'Every morning, get a rundown of which students need help and ready-to-send draft emails for parents. Call to log notes hands-free.',
     messages: [
       { type: 'ai', text: "Good morning! Here's your daily brief: 3 students flagged for missing assignments, 2 parent emails drafted for you." },
       { type: 'user', text: "Thanks! Can you check Marcus's grade in Algebra II?" },
@@ -49,8 +49,8 @@ const tabs = [
     id: 'districts',
     icon: Building2,
     label: 'For Districts',
-    headline: 'Make your tech stack work harder.',
-    body: 'Connect all your existing tools into one thread. Zero migration, zero IT drain. Go live in under 2 weeks.',
+    headline: 'Make your software tools work harder.',
+    body: 'Unify all your existing tools into one thread. Zero migration, zero IT drain. Go live in under 2 weeks.',
     messages: [
       { type: 'user', text: "How many tools does Jefferson Elementary currently use?" },
       { type: 'ai', text: "Jefferson Elementary has 14 active EdTech tools. Canvas and PowerSchool have the highest usage. 4 tools show <10% adoption, potential candidates for consolidation." },

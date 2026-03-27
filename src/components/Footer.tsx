@@ -31,8 +31,8 @@ export default function Footer() {
             Kritikos
           </span>
           <div className="flex gap-8">
-            <a href="#" className="text-[11px] font-semibold tracking-widest uppercase text-muted hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="text-[11px] font-semibold tracking-widest uppercase text-muted hover:text-primary transition-colors">Terms of Service</a>
+            <a href="/privacy.html" className="text-[11px] font-semibold tracking-widest uppercase text-muted hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/terms.html" className="text-[11px] font-semibold tracking-widest uppercase text-muted hover:text-primary transition-colors">Terms of Service</a>
             <a href="mailto:contact@usekritikos.com" className="text-[11px] font-semibold tracking-widest uppercase text-muted hover:text-primary transition-colors">Contact</a>
           </div>
           <span className="text-[11px] font-semibold tracking-widest uppercase text-muted">

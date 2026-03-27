@@ -48,7 +48,7 @@ export default function Integrations() {
           className="bg-white rounded-3xl p-8 md:p-12 border border-outline/40 mb-12"
         >
           <p className="text-xs font-semibold tracking-widest uppercase text-muted mb-8 text-center">
-            Connect your existing stack
+            Works with your existing tools
           </p>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 items-center justify-items-center">
             {tools.map((tool, i) => (

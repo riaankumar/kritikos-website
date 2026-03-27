@@ -6,9 +6,9 @@ import IPhoneFrame from './IPhoneFrame'
 const features = [
   {
     icon: MessageSquare,
-    title: 'Morning Rundown',
-    subtitle: 'Personalized daily briefings synced with your LMS and schedule.',
-    detail: 'Every morning at 7:15, teachers receive a text with flagged students, drafted parent emails, and a priority list, synthesized from Canvas, PowerSchool, and Google Classroom overnight.',
+    title: 'Student Rundown',
+    subtitle: 'See exactly which students need attention, synced with your LMS and schedule.',
+    detail: 'Every morning at 7:15, teachers get a student rundown: who needs attention, why, and what to do about it. Parent emails pre-drafted. Priority actions ready. One text.',
     mockup: 'briefing',
   },
   {

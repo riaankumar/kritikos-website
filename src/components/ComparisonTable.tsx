@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 
 const rows = [
   {
-    category: 'Morning Workflow',
+    category: 'Daily Workflow',
     statusQuo: 'Log into 4-6 platforms before class: PowerSchool for attendance, Canvas for grades, Google Classroom for submissions, IEP tracker, email for parents.',
-    kritikos: 'Receive one morning text with everything: flagged students, parent emails drafted, assignments due, and behavior notes. Reply to act.',
+    kritikos: 'Receive one student rundown with everything: flagged students, parent emails drafted, assignments due, and behavior notes. Reply to act.',
   },
   {
     category: 'Parent Communication',

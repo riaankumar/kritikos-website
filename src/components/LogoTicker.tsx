@@ -27,7 +27,7 @@ export default function LogoTicker() {
     >
       <div className="max-w-screen-xl mx-auto px-6 mb-6">
         <p className="text-center text-xs font-semibold tracking-widest uppercase text-muted">
-          Works With Your Existing Stack
+          Works With Your Existing Tools
         </p>
       </div>
 

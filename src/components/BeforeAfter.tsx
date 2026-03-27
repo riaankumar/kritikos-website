@@ -10,7 +10,7 @@ const without = [
 ]
 
 const withK = [
-  { time: '7:15', task: 'Receive morning text from Kritikos' },
+  { time: '7:15', task: 'Receive student rundown from Kritikos' },
   { time: '7:16', task: 'Reply SEND to deliver parent emails' },
   { time: '7:17', task: 'Done. Start teaching.' },
 ]

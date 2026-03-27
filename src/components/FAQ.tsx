@@ -4,21 +4,24 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    q: 'How does Kritikos integrate with our existing tools?',
-    a: 'Kritikos connects to your SIS (PowerSchool, Infinite Campus), LMS (Canvas, Google Classroom, Schoology), and communication tools via secure APIs and roster sync through Clever or ClassLink. No data migration needed. We layer on top of your existing stack.',
+    q: 'How does Kritikos work with our existing tools?',
+    a: 'Kritikos reads from your SIS (PowerSchool, Infinite Campus), LMS (Canvas, Google Classroom, Schoology), and communication tools via secure APIs and roster sync through Clever or ClassLink. No data migration needed. We layer on top of your existing software.',
   },
-
+  {
+    q: 'How is student data protected?',
+    a: 'Kritikos is FERPA compliant and signs a Data Protection Agreement with every school. We use read-only API access, meaning we never modify your source systems. All data is encrypted in transit and at rest. We do not sell or share student data with third parties. SOC 2 certification is in progress.',
+  },
   {
     q: 'How long does setup take?',
-    a: 'Most schools go live in under 2 weeks. We handle the integration setup. Your IT team just authorizes the API connections. There\'s zero migration required since Kritikos reads from your existing tools.',
+    a: 'Most schools go live in under 2 weeks. We handle the setup. Your IT team just authorizes the API connections. Zero migration required since Kritikos reads from your existing tools.',
   },
   {
     q: 'What makes Kritikos different from other EdTech platforms?',
-    a: 'Most EdTech tools add another dashboard to manage. Kritikos brings your data to where you already are: your text messages and phone calls. We unify fragmented data sources into one knowledge graph and surface actionable insights proactively.',
+    a: 'Most EdTech tools add another dashboard to manage. Kritikos is an AI agent that lives on iMessage and WhatsApp. It thinks, drafts, flags, and acts, so teachers can focus on teaching and students can focus on learning.',
   },
   {
     q: 'Do teachers need to learn new software?',
-    a: 'No. If a teacher can send a text message, they can use Kritikos. There\'s no app to download, no portal to learn. Morning briefings arrive as texts, parent emails are pre-drafted, and notes can be logged via voice call.',
+    a: 'No. If a teacher can send a text message, they can use Kritikos. No app to download, no portal to learn. Student rundowns arrive as texts, parent emails are pre-drafted, and notes can be logged via voice call.',
   },
   {
     q: 'What does the student Companion do?',
@@ -26,11 +29,11 @@ const faqs = [
   },
   {
     q: 'How is Kritikos priced?',
-    a: 'We offer a teacher freemium tier, school enterprise licensing, and parent direct options. During the private beta, qualifying schools get free access. Contact us for district-level pricing based on your size and needs.',
+    a: 'We offer a teacher freemium tier, school enterprise licensing, and parent direct options. During the pilot program, qualifying schools get free access. Contact us for district-level pricing based on your size and needs.',
   },
   {
     q: 'Can administrators get district-wide analytics?',
-    a: 'Yes. Administrators can ask any question in natural language ("Show me attendance trends for 9th grade" or "Which interventions are working?") and get instant, shareable dashboards synthesized from all connected data sources.',
+    a: 'Yes. Administrators can ask any question in natural language ("Show me attendance trends for 9th grade" or "Which interventions are working?") and get instant, shareable summaries synthesized from all connected tools.',
   },
 ]
 
