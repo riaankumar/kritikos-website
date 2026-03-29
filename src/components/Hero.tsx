@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 
 const chatMessages = [
@@ -115,17 +115,78 @@ export default function Hero() {
 function AnimatedIPhone() {
   const [visibleMessages, setVisibleMessages] = useState<number[]>([])
   const [typingVisible, setTypingVisible] = useState(false)
+  const phoneRef = useRef<HTMLDivElement>(null)
+  const glowRef = useRef<HTMLDivElement>(null)
+  const rafRef = useRef<number>(0)
+  const currentRotation = useRef({ x: 0, y: -15 })
+  const targetRotation = useRef({ x: 0, y: -15 })
 
+  // Mouse-tracking parallax tilt
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    if (!phoneRef.current) return
+    const rect = phoneRef.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+    const offsetX = (e.clientX - centerX) / (rect.width / 2)
+    const offsetY = (e.clientY - centerY) / (rect.height / 2)
+
+    // Clamp to [-1, 1] range
+    const clampedX = Math.max(-1, Math.min(1, offsetX))
+    const clampedY = Math.max(-1, Math.min(1, offsetY))
+
+    targetRotation.current = {
+      x: -clampedY * 8,   // tilt up/down (max 8deg)
+      y: -15 + clampedX * 12,  // base rotation + left/right (max 12deg)
+    }
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    targetRotation.current = { x: 0, y: -15 } // return to resting angle
+  }, [])
+
+  // Smooth animation loop — lerps toward target
+  useEffect(() => {
+    const animate = () => {
+      const lerp = 0.08
+      currentRotation.current.x += (targetRotation.current.x - currentRotation.current.x) * lerp
+      currentRotation.current.y += (targetRotation.current.y - currentRotation.current.y) * lerp
+
+      if (phoneRef.current) {
+        phoneRef.current.style.transform =
+          `perspective(1200px) rotateX(${currentRotation.current.x}deg) rotateY(${currentRotation.current.y}deg)`
+      }
+      if (glowRef.current) {
+        // Glow follows tilt direction
+        const glowX = -currentRotation.current.y * 2
+        const glowY = -currentRotation.current.x * 2
+        glowRef.current.style.transform = `translate(${glowX}px, ${glowY}px)`
+      }
+      rafRef.current = requestAnimationFrame(animate)
+    }
+    rafRef.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(rafRef.current)
+  }, [])
+
+  // Attach mouse listeners to container area
+  useEffect(() => {
+    const container = phoneRef.current?.parentElement
+    if (!container) return
+    container.addEventListener('mousemove', handleMouseMove)
+    container.addEventListener('mouseleave', handleMouseLeave)
+    return () => {
+      container.removeEventListener('mousemove', handleMouseMove)
+      container.removeEventListener('mouseleave', handleMouseLeave)
+    }
+  }, [handleMouseMove, handleMouseLeave])
+
+  // Message animation timers
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = []
     let cumDelay = 1200
 
     chatMessages.forEach((_, i) => {
-      // Show typing indicator before each message
       timers.push(setTimeout(() => setTypingVisible(true), cumDelay))
       cumDelay += 800 + Math.random() * 400
-
-      // Show message, hide typing
       timers.push(setTimeout(() => {
         setTypingVisible(false)
         setVisibleMessages(prev => [...prev, i])
@@ -137,9 +198,13 @@ function AnimatedIPhone() {
   }, [])
 
   return (
-    <div className="relative w-[320px] h-[660px] sm:w-[340px] sm:h-[690px] rotate-y-iphone animate-float" style={{ animationDuration: '8s' }}>
-      {/* Glow behind phone */}
-      <div className="absolute -inset-8 bg-primary/5 rounded-[5rem] blur-3xl -z-10" />
+    <div
+      ref={phoneRef}
+      className="relative w-[320px] h-[660px] sm:w-[340px] sm:h-[690px]"
+      style={{ transform: 'perspective(1200px) rotateY(-15deg)', willChange: 'transform' }}
+    >
+      {/* Glow behind phone — follows tilt */}
+      <div ref={glowRef} className="absolute -inset-8 bg-primary/10 rounded-[5rem] blur-3xl -z-10 transition-none" />
 
       {/* Titanium Frame */}
       <div className="absolute inset-0 rounded-[3.8rem] titanium-frame p-[4px]">
