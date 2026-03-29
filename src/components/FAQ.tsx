@@ -5,31 +5,31 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: 'What is K-12 Intelligence?',
-    a: 'Your school already has the data. Canvas knows assignments. PowerSchool knows grades. Google Classroom knows submissions. But none of these talk to each other. K-12 Intelligence connects all of it and gives you answers through a simple text. No new app, no new dashboard.',
+    a: 'Your school already has the data. Canvas knows assignments. PowerSchool knows grades. Google Classroom knows submissions. But none of these systems talk to each other. Kritikos builds a unified knowledge graph of every student across every tool and delivers actionable insights via iMessage, WhatsApp, or text. No new app, no new dashboard.',
   },
   {
     q: 'How does it work with the tools we already use?',
-    a: 'Kritikos plugs into the tools your school already runs: PowerSchool, Canvas, Google Classroom, Infinite Campus, Schoology, and more. We connect through Clever or ClassLink. Nothing changes for your staff. We just make everything smarter.',
+    a: 'Kritikos connects to your SIS, LMS, and communication tools via secure APIs and roster sync through Clever or ClassLink. We support PowerSchool, Canvas, Google Classroom, Infinite Campus, Schoology, and more. Nothing changes for your staff. We layer intelligence on top of what you already run.',
   },
   {
     q: 'Is student data safe?',
-    a: 'Yes. We are FERPA compliant and sign a Data Protection Agreement with every school. We only read your data, we never change it. Everything is encrypted. We never sell or share student information. SOC 2 certification is in progress.',
+    a: 'Yes. We are FERPA compliant and sign a Data Protection Agreement with every school. We use read-only API access, so we never modify your source systems. All data is encrypted in transit and at rest. We never sell or share student information. SOC 2 certification is in progress.',
   },
   {
     q: 'How long does it take to get started?',
-    a: 'Most schools are up and running in under 2 weeks. We handle the setup. Your IT team just says yes to the connections. Nothing to migrate, nothing to install.',
+    a: 'Most schools are up and running in under 2 weeks. We handle the setup. Your IT team just authorizes the API connections. Nothing to migrate, nothing to install.',
   },
   {
     q: 'How is this different from another dashboard?',
-    a: 'Dashboards give you another screen to check. Kritikos gives you answers where you already are: iMessage, WhatsApp, or text. Ask a question, get an answer. No logins, no training, no app to download.',
+    a: 'Dashboards give you another screen to check. Kritikos delivers actionable insights where you already are: iMessage, WhatsApp, or text. Ask a question, get an answer. No logins, no training, no app to download.',
   },
   {
     q: 'Do teachers or parents need training?',
-    a: 'If you can text, you can use Kritikos. Teachers get student updates, drafted parent emails, and flagged concerns as messages. Parents get weekly digests and can reply with questions. That is it.',
+    a: 'If you can text, you can use Kritikos. Teachers get student rundowns, drafted parent emails, and flagged concerns as messages. Parents get weekly digests and can reply with questions. That is it.',
   },
   {
     q: 'What can I ask Kritikos?',
-    a: 'Everything. "How is Marcus doing?" "Give me a rundown on Period 3." "Show me attendance for 9th grade." "Which students are falling behind?" "Draft an email to Sarah\'s parents." It pulls from every connected tool and gives you a clear answer in seconds.',
+    a: 'Everything. "How is Marcus doing?" "Give me a rundown on Period 3." "Show me attendance for 9th grade." "Which students are falling behind?" "Draft an email to Sarah\'s parents." It pulls from every connected system and gives you a clear answer in seconds.',
   },
   {
     q: 'How much does it cost?',
