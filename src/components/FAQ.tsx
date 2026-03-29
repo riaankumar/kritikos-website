@@ -41,7 +41,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="pt-16 pb-24 md:pt-20 md:pb-32 bg-white">
       <div className="max-w-3xl mx-auto px-6 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

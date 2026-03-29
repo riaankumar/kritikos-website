@@ -42,7 +42,7 @@ export default function LogoTicker() {
               key={`${logo.name}-${i}`}
               src={logo.src}
               alt={logo.name}
-              className={`object-contain transition-all duration-300 hover:scale-110 ${logo.name === 'Canvas' ? 'h-10' : 'h-8'}`}
+              className={`object-contain transition-all duration-300 hover:scale-110 ${logo.name === 'Canvas' || logo.name === 'Google Classroom' ? 'h-10' : 'h-8'}`}
               loading="lazy"
             />
           ))}

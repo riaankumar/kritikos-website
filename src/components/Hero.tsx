@@ -55,11 +55,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-3"
           >
-            <p className="text-lg font-semibold text-navy">
+            <p className="text-base md:text-lg font-semibold text-navy">
               Your entire school, in one chat.
             </p>
-            <p className="text-lg leading-relaxed text-muted max-w-lg">
-              Ask anything. Get instant answers about any student, any classroom, any metric, delivered via iMessage, WhatsApp, or SMS.
+            <p className="text-sm md:text-lg leading-relaxed text-muted max-w-lg">
+              Ask anything. Get instant answers about any student, any classroom, any metric, delivered via iMessage, WhatsApp, or&nbsp;SMS.
             </p>
           </motion.div>
 
