@@ -18,9 +18,10 @@ export default function Footer() {
         </p>
         <a
           href="https://calendly.com/riaankumar/kritikos-demo"
-          className="inline-flex bg-navy text-white px-10 py-4 rounded-full font-medium text-sm hover:opacity-90 transition-all active:scale-95"
+          className="group relative inline-flex bg-primary text-white px-10 py-4 rounded-2xl font-medium text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.97]"
         >
-          Book a Demo
+          Request a Demo
+          <span className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
       </motion.div>
 
