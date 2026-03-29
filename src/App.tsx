@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import LogoTicker from './components/LogoTicker'
-import FeatureShowcase from './components/FeatureShowcase'
 import Problem from './components/Problem'
 import ComparisonTable from './components/ComparisonTable'
 import Product from './components/Product'
@@ -20,7 +19,6 @@ export default function App() {
       <Navbar />
       <Hero />
       <LogoTicker />
-      <FeatureShowcase />
       <Problem />
       <ComparisonTable />
       <Product />

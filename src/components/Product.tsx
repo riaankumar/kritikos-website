@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageSquare, GraduationCap, BarChart3, Building2 } from 'lucide-react'
+import { MessageSquare, Heart, BarChart3, Building2 } from 'lucide-react'
 import IPhoneFrame from './IPhoneFrame'
 
 const tabs = [
@@ -9,27 +9,26 @@ const tabs = [
     icon: MessageSquare,
     label: 'For Teachers',
     headline: 'Your student rundown, delivered as a text.',
-    body: 'Every morning, get a rundown of which students need help and ready-to-send draft emails for parents. Call to log notes hands-free.',
+    body: 'Get a rundown of which students need attention, ready-to-send parent emails, and proactive alerts when patterns change. Call to log notes or query data hands-free.',
     messages: [
-      { type: 'ai', text: "Good morning! Here's your daily brief: 3 students flagged for missing assignments, 2 parent emails drafted for you." },
-      { type: 'user', text: "Thanks! Can you check Marcus's grade in Algebra II?" },
-      { type: 'ai', text: "Marcus has a C+ (78%) in Algebra II. He's missing 2 homework assignments from last week. Want me to draft a parent email?" },
-      { type: 'user', text: 'Yes please, and remind him about today\'s quiz.' },
-      { type: 'ai', text: 'Done! Parent email drafted and quiz reminder sent to Marcus. His Companion will also notify him of 3 other assignments due today.' },
+      { type: 'ai', text: "3 students flagged today: Marcus (2 missing assignments), Emma (attendance drop), Tyler (IEP review due Friday). 2 parent emails drafted." },
+      { type: 'user', text: "Send the parent emails, and check Marcus's Algebra II grade." },
+      { type: 'ai', text: "Both emails sent. Marcus has a C+ (78%) in Algebra II, missing 2 homework assignments from last week. Want me to draft a follow-up?" },
+      { type: 'user', text: "Yes, and log a positive behavior note for him. Great participation today." },
+      { type: 'ai', text: "Done! Parent email drafted and behavior note logged. That's Marcus's 3rd positive note this month." },
     ],
   },
   {
-    id: 'students',
-    icon: GraduationCap,
-    label: 'For Students',
-    headline: 'A daily Companion that never lets you fall behind.',
-    body: 'A text Companion that tells you exactly what\'s due today across all your classes. Socratic tutoring that builds reasoning, not dependency.',
+    id: 'parents',
+    icon: Heart,
+    label: 'For Parents',
+    headline: 'Know how your child is doing. No app required.',
+    body: 'Receive clear, actionable updates about your child\'s progress via text. Grades, attendance, teacher notes, and weekly digests, all in plain language.',
     messages: [
-      { type: 'ai', text: "Hey! You have 3 assignments due today: Algebra II worksheet (3pm), AP History essay draft (5pm), and Bio lab report (11:59pm)." },
-      { type: 'user', text: "Can you help me with the Algebra worksheet?" },
-      { type: 'ai', text: "Of course! Let's start with problem 1. What do you think the first step is for solving 2x + 5 = 17?" },
-      { type: 'user', text: "Subtract 5 from both sides?" },
-      { type: 'ai', text: "Exactly right! 2x = 12. Now what would you do next to find x?" },
+      { type: 'ai', text: "Hi Mrs. Johnson! Emma had a great week: 92% on her math quiz and all homework submitted on time." },
+      { type: 'ai', text: "One area to watch: her reading log is 2 entries behind. A quick 15-min session tonight would get her caught up." },
+      { type: 'user', text: "Thanks! We'll do that tonight. How is she doing in Science?" },
+      { type: 'ai', text: "Emma has an A- (91%) in Science. Her teacher flagged great participation this week. I'll check in again Friday with her updated progress." },
     ],
   },
   {
