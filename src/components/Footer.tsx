@@ -36,7 +36,7 @@ export default function Footer() {
             <a href="mailto:contact@usekritikos.com" className="text-[11px] font-semibold tracking-widest uppercase text-muted hover:text-primary transition-colors">Contact</a>
           </div>
           <span className="text-[11px] font-semibold tracking-widest uppercase text-muted">
-            © 2026 Kritikos AI. Designed for human learning.
+            © 2026 Kritikos AI. Designed for K-12 Intelligence.
           </span>
         </div>
       </div>
