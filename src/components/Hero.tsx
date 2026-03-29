@@ -181,7 +181,7 @@ function AnimatedIPhone() {
                       initial={{ opacity: 0, scale: 0.8, y: 12 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="self-end max-w-[82%] bg-primary text-white px-3.5 py-2 rounded-[1.2rem] rounded-tr-[0.3rem] text-[12px] leading-snug font-medium"
+                      className="self-end max-w-[82%] bg-[#007AFF] text-white px-3.5 py-2 rounded-[1.2rem] rounded-tr-[0.3rem] text-[12px] leading-snug font-medium"
                     >
                       {msg.text}
                     </motion.div>
@@ -226,8 +226,8 @@ function AnimatedIPhone() {
             <div className="px-3 pb-2">
               <div className="flex items-center gap-2 bg-zinc-900 rounded-full px-4 py-2 border border-zinc-800">
                 <span className="text-[11px] text-zinc-600 flex-1">iMessage</span>
-                <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" /></svg>
+                <div className="w-6 h-6 rounded-full bg-[#007AFF]/20 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-[#007AFF]" fill="currentColor" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" /></svg>
                 </div>
               </div>
             </div>

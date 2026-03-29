@@ -142,7 +142,7 @@ export default function Product() {
                     transition={{ duration: 0.35, delay: i * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className={`max-w-[82%] px-3.5 py-2 text-[12px] leading-snug ${
                       msg.type === 'user'
-                        ? 'self-end bg-primary text-white rounded-[1.2rem] rounded-tr-[0.3rem] font-medium'
+                        ? 'self-end bg-[#007AFF] text-white rounded-[1.2rem] rounded-tr-[0.3rem] font-medium'
                         : 'self-start bg-[#1C1C1E] text-zinc-100 rounded-[1.2rem] rounded-tl-[0.3rem] border border-white/5'
                     }`}
                   >
