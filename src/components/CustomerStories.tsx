@@ -29,11 +29,6 @@ const stories = [
 
 const extras = [
   {
-    quote: "It's like adding an extra staff member to every classroom without adding headcount.",
-    author: 'District Administrator',
-    org: 'K-12 District',
-  },
-  {
     quote: 'Prep period is for prepping again. Not for chasing data across four platforms.',
     author: 'High School Teacher',
     org: 'Private Beta',
@@ -108,7 +103,7 @@ export default function CustomerStories() {
         </div>
 
         {/* Extra testimonials — lighter style */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
           {extras.map((t, i) => (
             <motion.div
               key={i}
