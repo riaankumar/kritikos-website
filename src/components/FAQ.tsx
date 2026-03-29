@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'What makes Kritikos different from other EdTech platforms?',
-    a: 'Most EdTech tools add another dashboard to manage. Kritikos is an AI assistant that lives on iMessage. It thinks, drafts, flags, and acts — so teachers can focus on teaching and parents stay informed without downloading an app.',
+    a: 'Most EdTech tools add another dashboard to manage. Kritikos is an AI assistant that lives on iMessage, WhatsApp, and text. It thinks, drafts, flags, and acts — so teachers can focus on teaching and parents stay informed without downloading an app.',
   },
   {
     q: 'Do teachers need to learn new software?',
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'Do parents need to download an app?',
-    a: 'No. Parents receive updates via iMessage — grades, attendance, teacher notes, and weekly digests. They can reply to ask questions about their child\'s progress. No app, no login, no friction.',
+    a: 'No. Parents receive updates via iMessage, WhatsApp, or text — grades, attendance, teacher notes, and weekly digests. They can reply to ask questions about their child\'s progress. No app, no login, no friction.',
   },
   {
     q: 'How is Kritikos priced?',

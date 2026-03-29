@@ -20,7 +20,7 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
       className="bg-white rounded-2xl p-8 border border-outline/40 card-hover group"
     >
       <div className={`text-5xl md:text-6xl font-bold ${stat.color} mb-4 tabular-nums`} style={{ fontFamily: "'Instrument Serif', serif" }}>
-        {stat.prefix}{count}{stat.suffix}
+        {count}{stat.suffix}
       </div>
       <h3 className="text-base font-semibold text-navy mb-2">{stat.label}</h3>
       <p className="text-sm text-muted leading-relaxed">{stat.desc}</p>

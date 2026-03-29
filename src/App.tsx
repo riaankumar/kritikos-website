@@ -5,7 +5,7 @@ import Product from './components/Product'
 
 import ComparisonTable from './components/ComparisonTable'
 import CustomerStories from './components/CustomerStories'
-import Calculator from './components/Calculator'
+
 import FAQ from './components/FAQ'
 import LogoTicker from './components/LogoTicker'
 
@@ -22,7 +22,6 @@ export default function App() {
 
       <ComparisonTable />
       <CustomerStories />
-      <Calculator />
       <FAQ />
       <LogoTicker />
 
