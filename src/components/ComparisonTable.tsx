@@ -4,7 +4,7 @@ const rows = [
   {
     category: 'Daily Workflow',
     statusQuo: 'Log into 4-6 platforms before class: PowerSchool for attendance, Canvas for grades, Google Classroom for submissions, IEP tracker, email for parents.',
-    kritikos: 'Text Kritikos for a student rundown anytime: flagged students, parent emails drafted, assignments due, and behavior notes. Reply to act.',
+    kritikos: 'Text or call Kritikos for a student rundown anytime: flagged students, parent emails drafted, assignments due, and behavior notes. Reply to act.',
   },
   {
     category: 'Parent Communication',
@@ -29,7 +29,7 @@ const rows = [
   {
     category: 'Admin & Reporting',
     statusQuo: 'Export data from each platform, compile in Excel, build dashboards manually, present to stakeholders weeks later.',
-    kritikos: 'Ask any question in natural language. AI generates dashboards and summaries in real time, shareable with one tap.',
+    kritikos: 'Ask any question via text or a quick phone call. AI generates dashboards and summaries in real time, shareable with one tap.',
   },
 ]
 
