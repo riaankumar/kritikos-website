@@ -10,10 +10,42 @@ const checklist = [
 
 export default function TrialForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setIsSubmitting(true)
+    setError(null)
+
+    const formData = new FormData(e.currentTarget)
+    const payload = {
+      full_name: String(formData.get("full_name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      school_name: String(formData.get("school_name") ?? ""),
+      school_size: String(formData.get("school_size") ?? ""),
+      school_type: String(formData.get("school_type") ?? ""),
+      grades_offered: String(formData.get("grades_offered") ?? ""),
+    }
+
+    try {
+      const response = await fetch("/api/trial-signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form")
+      }
+
+      setSubmitted(true)
+      e.currentTarget.reset()
+    } catch {
+      setError("Could not submit right now. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -91,56 +123,61 @@ export default function TrialForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-xs font-medium text-navy mb-1.5 block">Full name</label>
-                    <input type="text" required className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+                    <input name="full_name" type="text" required className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                   </div>
                   <div>
                     <label className="text-xs font-medium text-navy mb-1.5 block">Email</label>
-                    <input type="email" required className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+                    <input name="email" type="email" required className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                   </div>
                 </div>
 
                 <div>
                   <label className="text-xs font-medium text-navy mb-1.5 block">District / School name</label>
-                  <input type="text" required className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+                  <input name="school_name" type="text" required className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-xs font-medium text-navy mb-1.5 block">District size</label>
-                    <select className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
-                      <option>Under 500</option>
-                      <option>500–1,000</option>
-                      <option>1,000–5,000</option>
-                      <option>5,000–10,000</option>
-                      <option>10,000+</option>
+                    <select name="school_size" className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
+                      <option value="Under 500">Under 500</option>
+                      <option value="500-1,000">500–1,000</option>
+                      <option value="1,000-5,000">1,000–5,000</option>
+                      <option value="5,000-10,000">5,000–10,000</option>
+                      <option value="10,000+">10,000+</option>
                     </select>
                   </div>
                   <div>
                     <label className="text-xs font-medium text-navy mb-1.5 block">School type</label>
-                    <select className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
-                      <option>Public</option>
-                      <option>Private</option>
-                      <option>Charter</option>
-                      <option>International</option>
+                    <select name="school_type" className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
+                      <option value="Public">Public</option>
+                      <option value="Private">Private</option>
+                      <option value="Charter">Charter</option>
+                      <option value="International">International</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label className="text-xs font-medium text-navy mb-1.5 block">Grades offered</label>
-                  <select className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
-                    <option>Elementary (K–5)</option>
-                    <option>Middle (6–8)</option>
-                    <option>High (9–12)</option>
-                    <option>K–12</option>
+                  <select name="grades_offered" className="w-full border border-outline rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
+                    <option value="Elementary (K-5)">Elementary (K–5)</option>
+                    <option value="Middle (6-8)">Middle (6–8)</option>
+                    <option value="High (9-12)">High (9–12)</option>
+                    <option value="K-12">K–12</option>
                   </select>
                 </div>
 
+                {error && (
+                  <p className="text-sm text-red-600">{error}</p>
+                )}
+
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-primary text-white py-4 rounded-xl font-medium text-sm hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 shimmer-effect"
                 >
-                  Start Your Pilot
+                  {isSubmitting ? "Submitting..." : "Start Your Pilot"}
                   <ArrowRight size={16} />
                 </button>
               </form>

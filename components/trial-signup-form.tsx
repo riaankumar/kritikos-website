@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { createClient } from "@/lib/supabase/client"
 import {
   CheckCircle,
   Clock,
@@ -71,27 +70,35 @@ export default function TrialSignupForm() {
     setIsSubmitting(true)
     setError(null)
 
-    const supabase = createClient()
-    const { error: dbError } = await supabase.from("trial_signups").insert({
-      full_name: form.full_name,
-      email: form.email,
-      phone: form.phone || null,
-      school_name: form.school_name,
-      school_website: form.school_website || null,
-      school_size: form.school_size || null,
-      school_type: form.school_type || null,
-      students_count: form.students_count || null,
-      grades_offered: form.grades_offered || null,
-      willing_to_give_feedback: form.willing_to_give_feedback,
-      willing_to_join_setup_call: form.willing_to_join_setup_call,
-    })
+    try {
+      const response = await fetch("/api/trial-signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          full_name: form.full_name,
+          email: form.email,
+          phone: form.phone || null,
+          school_name: form.school_name,
+          school_website: form.school_website || null,
+          school_size: form.school_size || null,
+          school_type: form.school_type || null,
+          students_count: form.students_count || null,
+          grades_offered: form.grades_offered || null,
+          willing_to_give_feedback: form.willing_to_give_feedback,
+          willing_to_join_setup_call: form.willing_to_join_setup_call,
+        }),
+      })
 
-    setIsSubmitting(false)
-
-    if (dbError) {
+      if (!response.ok) {
+        throw new Error("Failed to submit trial signup")
+      }
+    } catch {
       setError("Something went wrong. Please try again.")
+      setIsSubmitting(false)
       return
     }
+
+    setIsSubmitting(false)
 
     setShowConfirmation(true)
     setForm({
