@@ -201,13 +201,105 @@ function AnimatedIPhone() {
     <div
       ref={phoneRef}
       className="relative w-[320px] h-[660px] sm:w-[340px] sm:h-[690px]"
-      style={{ transform: 'perspective(1200px) rotateY(-15deg)', willChange: 'transform' }}
+      style={{ transform: 'perspective(1200px) rotateY(-15deg)', transformStyle: 'preserve-3d', willChange: 'transform' }}
     >
       {/* Glow behind phone — follows tilt */}
       <div ref={glowRef} className="absolute -inset-8 bg-primary/10 rounded-[5rem] blur-3xl -z-10 transition-none" />
 
-      {/* Titanium Frame */}
-      <div className="absolute inset-0 rounded-[3.8rem] titanium-frame p-[4px]">
+      {/* 3D Side Edge — Right face (visible due to Y rotation) */}
+      <div
+        className="absolute top-0 right-0 h-full"
+        style={{
+          width: '10px',
+          transformOrigin: 'right center',
+          transform: 'rotateY(90deg)',
+          transformStyle: 'preserve-3d',
+          borderRadius: '0 2px 2px 0',
+        }}
+      >
+        {/* Titanium side panel */}
+        <div className="w-full h-full relative" style={{
+          background: 'linear-gradient(180deg, #8A8680 0%, #A09A94 15%, #7A756F 30%, #9E9890 50%, #8A8680 70%, #A09A94 85%, #7A756F 100%)',
+          borderRadius: '0 2px 2px 0',
+        }}>
+          {/* Brushed metal texture */}
+          <div className="absolute inset-0 opacity-30" style={{
+            background: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.1) 1px, rgba(255,255,255,0.1) 2px)',
+          }} />
+          {/* Power button */}
+          <div className="absolute right-0 w-full" style={{ top: '27%', height: '12%' }}>
+            <div className="w-full h-full" style={{
+              background: 'linear-gradient(90deg, #706B65 0%, #9E9890 40%, #B0AAA2 60%, #8A8680 100%)',
+              borderRadius: '0 1px 1px 0',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.15)',
+            }} />
+          </div>
+        </div>
+      </div>
+
+      {/* 3D Side Edge — Left face */}
+      <div
+        className="absolute top-0 left-0 h-full"
+        style={{
+          width: '10px',
+          transformOrigin: 'left center',
+          transform: 'rotateY(-90deg)',
+          transformStyle: 'preserve-3d',
+          borderRadius: '2px 0 0 2px',
+        }}
+      >
+        <div className="w-full h-full relative" style={{
+          background: 'linear-gradient(180deg, #7A756F 0%, #8A8680 20%, #A09A94 40%, #8A8680 60%, #7A756F 80%, #9E9890 100%)',
+          borderRadius: '2px 0 0 2px',
+        }}>
+          {/* Brushed metal texture */}
+          <div className="absolute inset-0 opacity-20" style={{
+            background: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.1) 1px, rgba(255,255,255,0.1) 2px)',
+          }} />
+          {/* Action button */}
+          <div className="absolute w-full" style={{ top: '15%', height: '5%' }}>
+            <div className="w-full h-full" style={{
+              background: 'linear-gradient(90deg, #8A8680 0%, #B0AAA2 40%, #9E9890 60%, #706B65 100%)',
+              borderRadius: '1px 0 0 1px',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.15)',
+            }} />
+          </div>
+          {/* Volume Up */}
+          <div className="absolute w-full" style={{ top: '23%', height: '8%' }}>
+            <div className="w-full h-full" style={{
+              background: 'linear-gradient(90deg, #8A8680 0%, #B0AAA2 40%, #9E9890 60%, #706B65 100%)',
+              borderRadius: '1px 0 0 1px',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.15)',
+            }} />
+          </div>
+          {/* Volume Down */}
+          <div className="absolute w-full" style={{ top: '33%', height: '8%' }}>
+            <div className="w-full h-full" style={{
+              background: 'linear-gradient(90deg, #8A8680 0%, #B0AAA2 40%, #9E9890 60%, #706B65 100%)',
+              borderRadius: '1px 0 0 1px',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.15)',
+            }} />
+          </div>
+        </div>
+      </div>
+
+      {/* 3D Bottom Edge */}
+      <div
+        className="absolute bottom-0 left-0 w-full"
+        style={{
+          height: '10px',
+          transformOrigin: 'center bottom',
+          transform: 'rotateX(90deg)',
+        }}
+      >
+        <div className="w-full h-full" style={{
+          background: 'linear-gradient(90deg, #7A756F 0%, #8A8680 10%, #A09A94 50%, #8A8680 90%, #7A756F 100%)',
+          borderRadius: '0 0 2px 2px',
+        }} />
+      </div>
+
+      {/* Front face — Titanium Frame */}
+      <div className="absolute inset-0 rounded-[3.8rem] titanium-frame p-[4px]" style={{ backfaceVisibility: 'hidden' }}>
         <div className="absolute inset-[4px] rounded-[3.6rem] iphone-screen-border p-[10px]">
           <div className="w-full h-full bg-white rounded-[3rem] overflow-hidden relative flex flex-col">
             {/* Dynamic Island */}
@@ -335,11 +427,6 @@ function AnimatedIPhone() {
           </div>
         </div>
 
-        {/* Physical Buttons */}
-        <div className="absolute top-[105px] -left-[2px] w-[3px] h-8 titanium-button rounded-l-[1px]" />
-        <div className="absolute top-[155px] -left-[2px] w-[3px] h-14 titanium-button rounded-l-[1px]" />
-        <div className="absolute top-[222px] -left-[2px] w-[3px] h-14 titanium-button rounded-l-[1px]" />
-        <div className="absolute top-[185px] -right-[2px] w-[3px] h-20 titanium-button rounded-r-[1px]" />
       </div>
 
       {/* Glare */}
