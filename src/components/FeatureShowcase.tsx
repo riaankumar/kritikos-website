@@ -12,18 +12,18 @@ const features = [
     mockup: 'briefing',
   },
   {
+    icon: Phone,
+    title: 'Call Kritikos',
+    subtitle: 'Call anytime for instant student insights, notes, and summaries — hands-free.',
+    detail: 'Call Kritikos like a colleague. Ask for a student update, log a behavior note, or get a class summary — all by voice. "Hey Kritikos, how is Marcus doing this week?" Real-time voice AI that knows your students.',
+    mockup: 'voice',
+  },
+  {
     icon: Brain,
     title: 'Socratic Tutoring',
     subtitle: 'AI that guides students through problems instead of giving answers.',
     detail: 'Kritikos maps reasoning patterns, not just right/wrong answers. Students receive personalized Socratic prompts via text that build genuine understanding over time.',
     mockup: 'tutoring',
-  },
-  {
-    icon: Phone,
-    title: 'Voice Calls',
-    subtitle: 'Speak naturally with Kritikos to brainstorm or log notes.',
-    detail: '"Hey Kritikos, log a behavior note for Marcus, positive participation today." Teachers call to query data, log notes, or get instant student summaries hands-free.',
-    mockup: 'voice',
   },
   {
     icon: BarChart3,
@@ -63,10 +63,11 @@ const mockupMessages: Record<string, Array<{ type: string; text: string }>> = {
     { type: 'ai', text: "Perfect. And what kind of triangle has a 90° angle and two equal angles?" },
   ],
   voice: [
-    { type: 'ai', text: "📞 Call in progress · 0:12" },
-    { type: 'ai', text: '"Marcus has 2 missing assignments in Algebra II and a parent conference scheduled for Friday."' },
-    { type: 'user', text: "Log a positive behavior note for Marcus, great participation today." },
-    { type: 'ai', text: "Done. Behavior note logged for Marcus: positive participation. This is his 3rd positive note this month." },
+    { type: 'ai', text: "📞 Kritikos Voice · 0:03\n\"Hi! What can I help with?\"" },
+    { type: 'user', text: "How is Marcus doing this week?" },
+    { type: 'ai', text: "Marcus has 2 missing assignments in Algebra II, but his participation is up. He scored 88% on Wednesday's quiz. Parent conference is scheduled for Friday." },
+    { type: 'user', text: "Log a positive note — great participation today." },
+    { type: 'ai', text: "Done. Positive behavior note logged for Marcus. That's his 3rd this month. Want me to include it in Friday's parent update?" },
   ],
   parents: [
     { type: 'ai', text: "Hi Mrs. Johnson! Emma had a great week! She scored 92% on her math quiz and completed all homework on time." },
@@ -107,7 +108,7 @@ export default function FeatureShowcase() {
             Meet Kritikos
           </h2>
           <p className="text-muted text-lg mt-4 max-w-2xl mx-auto">
-            Six capabilities. One text thread. No new software to learn.
+            Text it. Call it. Ask it anything. No new software to learn.
           </p>
         </motion.div>
 
