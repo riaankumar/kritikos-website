@@ -2,7 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
 import Product from './components/Product'
-import BeforeAfter from './components/BeforeAfter'
+
 import ComparisonTable from './components/ComparisonTable'
 import CustomerStories from './components/CustomerStories'
 import Calculator from './components/Calculator'
@@ -19,7 +19,7 @@ export default function App() {
       <Hero />
       <Problem />
       <Product />
-      <BeforeAfter />
+
       <ComparisonTable />
       <CustomerStories />
       <Calculator />
