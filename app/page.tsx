@@ -333,8 +333,8 @@ function HeroSection() {
       </div>
 
       <div className="max-w-[1120px] mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div style={{ animation: "fade-up 0.7s ease both" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+          <div className="lg:pl-6" style={{ animation: "fade-up 0.7s ease both" }}>
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full mb-5"
               style={{ color: "#4361EE", background: "rgba(67,97,238,0.1)", border: "1px solid rgba(67,97,238,0.2)" }}>
               <span className="relative w-1.5 h-1.5 rounded-full" style={{ background: "#2EC4A0" }}>
@@ -383,7 +383,7 @@ function HeroSection() {
           </div>
 
           {/* Phone mockups */}
-          <div className="flex justify-center lg:justify-end overflow-hidden" style={{ animation: "fade-up 0.9s ease 0.15s both" }}>
+          <div className="flex justify-center lg:justify-center lg:pr-4 overflow-hidden" style={{ animation: "fade-up 0.9s ease 0.15s both" }}>
             <MethodologyAnimation activeStep={null} />
           </div>
         </div>

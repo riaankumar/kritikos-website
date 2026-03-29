@@ -15,9 +15,9 @@ export default function Hero() {
       <div className="absolute inset-0 gradient-mesh -z-10" />
       <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary-light/40 via-transparent to-transparent pointer-events-none -z-10" />
 
-      <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center py-12 lg:py-0">
+      <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center py-12 lg:py-0">
         {/* Left Content */}
-        <div className="lg:col-span-5 z-10 space-y-5">
+        <div className="lg:col-span-6 z-10 space-y-5 lg:pl-35">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -108,7 +108,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60, rotateY: -25 }}
           animate={{ opacity: 1, x: 0, rotateY: -15 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="lg:col-span-7 relative flex justify-center lg:justify-end perspective-2000"
+          className="lg:col-span-6 relative flex justify-center lg:justify-center lg:-ml-6 perspective-2000"
         >
           <AnimatedIPhone />
         </motion.div>
