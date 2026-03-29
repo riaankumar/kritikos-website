@@ -172,24 +172,24 @@ function AnimatedIPhone() {
             </div>
 
             {/* Chat Header — iMessage style */}
-            <div className="relative flex items-center justify-between px-4 pb-2.5 pt-1 border-b border-gray-200">
+            <div className="flex items-center justify-between px-4 pb-2 pt-0.5 border-b border-gray-200">
               {/* Back button */}
-              <div className="flex items-center gap-0.5 min-w-[60px]">
+              <div className="flex items-center gap-0.5 shrink-0">
                 <svg className="w-[18px] h-[18px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="15 18 9 12 15 6" />
                 </svg>
                 <span className="text-[13px] text-[#007AFF]">12</span>
               </div>
               {/* Center — Avatar + Name */}
-              <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#007AFF] to-[#5856D6] flex items-center justify-center text-white font-semibold text-[11px] shadow-sm">
+              <div className="flex flex-col items-center mx-auto">
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#007AFF] to-[#5856D6] flex items-center justify-center text-white font-semibold text-[10px]">
                   K
                 </div>
-                <span className="text-[10px] text-black font-semibold mt-0.5">Kritikos AI</span>
+                <span className="text-[10px] text-black font-semibold mt-0.5 leading-tight">Kritikos AI</span>
               </div>
               {/* Right — FaceTime button */}
-              <div className="min-w-[60px] flex justify-end">
-                <svg className="w-[22px] h-[22px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+              <div className="shrink-0">
+                <svg className="w-[20px] h-[20px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
                   <polygon points="23 7 16 12 23 17 23 7" />
                   <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                 </svg>
@@ -197,7 +197,7 @@ function AnimatedIPhone() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 flex flex-col px-3 py-3 space-y-2.5 overflow-hidden">
+            <div className="flex-1 flex flex-col px-3 pt-2 pb-2 space-y-2 overflow-hidden">
               {chatMessages.map((msg, i) => {
                 if (!visibleMessages.includes(i)) return null
 
