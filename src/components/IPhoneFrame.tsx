@@ -28,9 +28,12 @@ export default function IPhoneFrame({ children, className = '' }: IPhoneFramePro
                 <div className="flex gap-[2px] items-end">
                   {[4, 6, 8, 10].map(h => <div key={h} className="w-[3px] bg-black rounded-full" style={{ height: h }} />)}
                 </div>
-                {/* WiFi icon */}
-                <svg className="w-[13px] h-[13px] text-black" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 18c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm-4.24-3.66a5.94 5.94 0 0 1 8.48 0l1.42-1.42a7.93 7.93 0 0 0-11.32 0l1.42 1.42zm-2.83-2.83a9.89 9.89 0 0 1 14.14 0l1.41-1.41c-4.69-4.69-12.28-4.69-16.97 0l1.42 1.41z" />
+                {/* WiFi icon — iOS style fan arcs */}
+                <svg className="w-[14px] h-[11px] text-black" viewBox="0 0 28 20" fill="currentColor">
+                  <circle cx="14" cy="17.5" r="2.5" />
+                  <path d="M9.08 13.42a6.96 6.96 0 0 1 9.84 0" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+                  <path d="M5.1 9.44a12.08 12.08 0 0 1 17.8 0" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+                  <path d="M1.12 5.46a17.2 17.2 0 0 1 25.76 0" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
                 </svg>
                 {/* Battery */}
                 <svg className="w-[18px] h-[10px] text-black ml-0.5" viewBox="0 0 25 12" fill="currentColor">
