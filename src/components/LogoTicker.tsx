@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 const logos = [
-  { name: 'Canvas', src: '/logos/canvas.webp' },
+  { name: 'Canvas', src: '/logos/canvas.png' },
   { name: 'Google Classroom', src: '/logos/google-classroom.png' },
   { name: 'PowerSchool', src: '/logos/powerschool.webp' },
   { name: 'Clever', src: '/logos/clever.png' },

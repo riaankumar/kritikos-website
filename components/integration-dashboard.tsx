@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 /* ── Integration config with actual logos ── */
 const INTEGRATIONS: { name: string; bg: string; logoUrl: string }[] = [
-  { name: "Canvas", bg: "bg-[#E13F29]/10", logoUrl: "/logos/canvas.webp" },
+  { name: "Canvas", bg: "bg-[#E13F29]/10", logoUrl: "/logos/canvas.png" },
   { name: "Google Classroom", bg: "bg-[#0F9D58]/10", logoUrl: "/logos/google-classroom.png" },
   { name: "PowerSchool", bg: "bg-[#00A3E0]/10", logoUrl: "/logos/powerschool.webp" },
   { name: "Schoology", bg: "bg-[#009CDE]/10", logoUrl: "/logos/schoology.png" },

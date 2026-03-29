@@ -113,7 +113,7 @@ function Navbar() {
    Integration Ticker
    ────────────────────────────────────────────── */
 const integrationLogos = [
-  { name: "Canvas", logo: "/logos/canvas.webp" },
+  { name: "Canvas", logo: "/logos/canvas.png" },
   { name: "Google Classroom", logo: "/logos/google-classroom.png" },
   { name: "PowerSchool", logo: "/logos/powerschool.webp" },
   { name: "Clever", logo: "/logos/clever.png" },
