@@ -43,23 +43,27 @@ export default function IPhoneFrame({ children, className = '' }: IPhoneFramePro
 
             {/* Chat Header — iMessage style */}
             <div className="flex items-center justify-between px-4 pb-2 pt-0.5 border-b border-gray-200">
-              {/* Back button */}
-              <div className="flex items-center gap-0.5 shrink-0">
-                <svg className="w-[18px] h-[18px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+              {/* Back chevron only */}
+              <div className="shrink-0">
+                <svg className="w-[22px] h-[22px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="15 18 9 12 15 6" />
                 </svg>
-                <span className="text-[13px] text-[#007AFF]">12</span>
               </div>
-              {/* Center — Avatar + Name */}
+              {/* Center — Avatar + Name > */}
               <div className="flex flex-col items-center mx-auto">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#007AFF] to-[#5856D6] flex items-center justify-center text-white font-semibold text-[10px]">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#007AFF] to-[#5856D6] flex items-center justify-center text-white font-bold text-[14px]">
                   K
                 </div>
-                <span className="text-[10px] text-black font-semibold mt-0.5 leading-tight">Kritikos AI</span>
+                <div className="flex items-center gap-0.5 mt-0.5">
+                  <span className="text-[11px] text-black font-semibold leading-tight">Kritikos</span>
+                  <svg className="w-[8px] h-[8px] text-[#8E8E93]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </div>
               </div>
-              {/* Right — FaceTime button */}
+              {/* FaceTime button */}
               <div className="shrink-0">
-                <svg className="w-[20px] h-[20px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                <svg className="w-[22px] h-[22px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
                   <polygon points="23 7 16 12 23 17 23 7" />
                   <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                 </svg>
@@ -67,7 +71,13 @@ export default function IPhoneFrame({ children, className = '' }: IPhoneFramePro
             </div>
 
             {/* Content area */}
-            <div className="flex-1 flex flex-col px-3 pt-2 pb-2 space-y-2 overflow-hidden">
+            <div className="flex-1 flex flex-col px-3 pt-1 pb-2 space-y-1.5 overflow-hidden">
+              {/* Timestamp */}
+              <div className="text-center py-1">
+                <span className="text-[9px] text-[#8E8E93]">iMessage</span>
+                <br />
+                <span className="text-[9px] text-[#8E8E93]">Today 9:41 AM</span>
+              </div>
               {children}
             </div>
 
@@ -77,13 +87,15 @@ export default function IPhoneFrame({ children, className = '' }: IPhoneFramePro
               <div className="w-7 h-7 rounded-full bg-[#E5E5EA] flex items-center justify-center shrink-0">
                 <svg className="w-4 h-4 text-[#8E8E93]" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
               </div>
-              {/* Text field */}
+              {/* Text field with mic */}
               <div className="flex-1 flex items-center bg-white rounded-full px-3 py-1.5 border border-[#C7C7CC]">
                 <span className="text-[12px] text-[#C7C7CC] flex-1">iMessage</span>
-              </div>
-              {/* Send button */}
-              <div className="w-7 h-7 rounded-full bg-[#007AFF] flex items-center justify-center shrink-0">
-                <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+                <svg className="w-[14px] h-[14px] text-[#8E8E93] ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
               </div>
             </div>
 
