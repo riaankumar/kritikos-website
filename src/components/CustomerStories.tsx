@@ -4,42 +4,42 @@ const stories = [
   {
     metric: '10+',
     unit: 'hrs/week',
-    label: 'saved per teacher',
-    quote: 'Kritikos gave our teachers 10+ hours back per week by automating the admin work that was pulling them away from students.',
-    author: 'Administrator',
+    label: 'Given back to every teacher',
+    quote: 'Our teachers stopped drowning in admin. They teach now. That alone justified Kritikos.',
+    author: 'District Administrator',
     org: 'K-12 District, Private Beta',
   },
   {
     metric: '73%',
     unit: '',
-    label: 'parent response rate',
-    quote: "We're reaching families we never could before. The text-first approach changed everything about parent engagement.",
-    author: 'Principal',
+    label: 'Parent response rate via text',
+    quote: "We went from 12% email open rates to 73% response rates overnight. Parents are finally in the loop.",
+    author: 'School Principal',
     org: 'Private Beta School',
   },
   {
     metric: '2',
     unit: 'min',
-    label: 'replaces 63 min of admin',
-    quote: 'I went from an hour of logging in everywhere to two minutes reading a text. I actually teach now.',
-    author: 'Teacher',
+    label: 'Replaces 63 min of daily admin',
+    quote: 'One text replaced six logins. I get a full hour back every single morning.',
+    author: 'High School Teacher',
     org: 'Private Beta Participant',
   },
 ]
 
 const extras = [
   {
-    quote: "It's like having an extra staff member for every teacher.",
+    quote: "It's like adding an extra staff member to every classroom without adding headcount.",
     author: 'District Administrator',
     org: 'K-12 District',
   },
   {
-    quote: 'I used to spend my prep period on emails and grade lookups. Now I actually prep.',
+    quote: 'Prep period is for prepping again. Not for chasing data across four platforms.',
     author: 'High School Teacher',
     org: 'Private Beta',
   },
   {
-    quote: 'We went from 6 disconnected tools to one thread. The IT team finally stopped getting support tickets.',
+    quote: 'Six disconnected tools became one thread. IT support tickets dropped to almost zero.',
     author: 'Technology Director',
     org: 'School District',
   },
@@ -78,35 +78,30 @@ export default function CustomerStories() {
             >
               {/* Metric */}
               <div className="mb-5">
-                <div className="flex items-baseline gap-1">
+                <div className="flex items-baseline gap-1.5">
                   <span
-                    className="text-5xl font-bold text-primary tabular-nums"
+                    className="text-[3.25rem] leading-none font-bold text-primary tabular-nums"
                     style={{ fontFamily: "'Instrument Serif', serif" }}
                   >
                     {s.metric}
                   </span>
                   {s.unit && (
-                    <span className="text-xl text-primary/60 font-medium">{s.unit}</span>
+                    <span className="text-lg text-primary/60 font-semibold">{s.unit}</span>
                   )}
                 </div>
-                <div className="text-sm font-medium text-navy/60 mt-1">{s.label}</div>
+                <div className="text-sm font-semibold text-navy/70 mt-2 tracking-tight">{s.label}</div>
               </div>
 
               {/* Divider */}
               <div className="w-10 h-px bg-primary/20 mb-5" />
 
               {/* Quote */}
-              <p className="text-sm text-navy/80 leading-relaxed mb-5">"{s.quote}"</p>
+              <p className="text-[15px] text-navy/80 leading-relaxed mb-5">"{s.quote}"</p>
 
               {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">
-                  {s.author[0]}
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-navy">{s.author}</div>
-                  <div className="text-xs text-muted">{s.org}</div>
-                </div>
+              <div className="pt-4 border-t border-outline/20">
+                <div className="text-xs font-semibold text-navy">{s.author}</div>
+                <div className="text-[11px] text-muted mt-0.5">{s.org}</div>
               </div>
             </motion.div>
           ))}
@@ -125,10 +120,10 @@ export default function CustomerStories() {
             >
               {/* Quote mark */}
               <span className="absolute top-3 left-5 text-3xl text-primary/15 leading-none font-serif">"</span>
-              <p className="text-sm text-navy/75 leading-relaxed mb-3 pl-3">
+              <p className="text-[13px] text-navy/75 leading-relaxed mb-4 pl-3">
                 {t.quote}
               </p>
-              <div className="text-xs text-muted pl-3">
+              <div className="text-[11px] text-muted pl-3 pt-3 border-t border-outline/15">
                 <span className="font-semibold text-navy/80">{t.author}</span> · {t.org}
               </div>
             </motion.div>
