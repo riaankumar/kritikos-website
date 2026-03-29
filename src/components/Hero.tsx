@@ -59,7 +59,7 @@ export default function Hero() {
               Your entire school, in one chat.
             </p>
             <p className="text-sm md:text-lg leading-relaxed text-muted max-w-lg">
-              Ask anything. Get instant answers about any student, any classroom, any metric, delivered via iMessage, WhatsApp, or&nbsp;SMS.
+              Ask anything. Get instant answers about any student, any classroom, any metric, delivered via iMessage, WhatsApp, SMS, or a phone&nbsp;call.
             </p>
           </motion.div>
 
