@@ -206,87 +206,8 @@ function AnimatedIPhone() {
       {/* Glow behind phone — follows tilt */}
       <div ref={glowRef} className="absolute -inset-8 bg-primary/10 rounded-[5rem] blur-3xl -z-10 transition-none" />
 
-      {/* === RIGHT SIDE EDGE — visible titanium strip === */}
-      <div className="absolute -right-[11px] top-[28px] bottom-[28px] w-[14px] z-0" style={{
-        background: 'linear-gradient(180deg, #B5B0A9 0%, #9E9890 8%, #8A8680 20%, #A09A94 35%, #7A756F 50%, #9E9890 65%, #8A8680 80%, #A09A94 92%, #B5B0A9 100%)',
-        borderRadius: '0 6px 6px 0',
-        boxShadow: '1px 0 4px rgba(0,0,0,0.15), inset -1px 0 1px rgba(255,255,255,0.08)',
-      }}>
-        {/* Brushed metal grain */}
-        <div className="absolute inset-0 opacity-40 rounded-r-[6px]" style={{
-          background: 'repeating-linear-gradient(180deg, transparent, transparent 2px, rgba(255,255,255,0.06) 2px, rgba(255,255,255,0.06) 3px)',
-        }} />
-        {/* Edge highlight */}
-        <div className="absolute top-0 right-0 w-[2px] h-full opacity-20 rounded-r-[6px]" style={{
-          background: 'linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.2) 70%, rgba(255,255,255,0.3) 100%)',
-        }} />
-        {/* Power / Side button */}
-        <div className="absolute right-0 w-full" style={{ top: '26%', height: '11%' }}>
-          <div className="h-full w-[12px] ml-auto rounded-r-[3px]" style={{
-            background: 'linear-gradient(90deg, #706B65 0%, #A09A94 30%, #B8B2AB 50%, #9E9890 70%, #7A756F 100%)',
-            boxShadow: '1px 0 2px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.15)',
-          }} />
-        </div>
-      </div>
-
-      {/* === BOTTOM EDGE — thin depth strip === */}
-      <div className="absolute -bottom-[10px] left-[28px] right-[28px] h-[12px] z-0" style={{
-        background: 'linear-gradient(90deg, #B5B0A9 0%, #9E9890 10%, #8A8680 25%, #A09A94 50%, #8A8680 75%, #9E9890 90%, #B5B0A9 100%)',
-        borderRadius: '0 0 6px 6px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.12), inset 0 -1px 1px rgba(255,255,255,0.06)',
-      }}>
-        {/* Brushed metal grain */}
-        <div className="absolute inset-0 opacity-30 rounded-b-[6px]" style={{
-          background: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 3px)',
-        }} />
-        {/* Speaker grille */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-[3px] flex gap-[3px]">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="w-[3px] h-[3px] rounded-full" style={{ background: '#5A5550' }} />
-          ))}
-        </div>
-        {/* USB-C port */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[2px] w-[18px] h-[4px] rounded-[2px]" style={{
-          background: 'linear-gradient(180deg, #4A4540 0%, #5A5550 50%, #4A4540 100%)',
-          boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.3)',
-        }} />
-      </div>
-
-      {/* === LEFT SIDE — volume buttons protruding outward === */}
-      <div className="absolute -left-[5px] top-[28px] bottom-[28px] w-[7px] z-0" style={{
-        background: 'linear-gradient(180deg, #B5B0A9 0%, #8A8680 20%, #7A756F 50%, #8A8680 80%, #B5B0A9 100%)',
-        borderRadius: '6px 0 0 6px',
-        boxShadow: '-1px 0 3px rgba(0,0,0,0.1), inset 1px 0 1px rgba(255,255,255,0.06)',
-      }}>
-        {/* Brushed grain */}
-        <div className="absolute inset-0 opacity-30 rounded-l-[6px]" style={{
-          background: 'repeating-linear-gradient(180deg, transparent, transparent 2px, rgba(255,255,255,0.06) 2px, rgba(255,255,255,0.06) 3px)',
-        }} />
-        {/* Action button */}
-        <div className="absolute left-0 w-full" style={{ top: '14%', height: '4.5%' }}>
-          <div className="h-full w-[5px] rounded-l-[3px]" style={{
-            background: 'linear-gradient(90deg, #7A756F 0%, #B0AAA2 40%, #9E9890 70%, #8A8680 100%)',
-            boxShadow: '-1px 0 2px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.1)',
-          }} />
-        </div>
-        {/* Volume Up */}
-        <div className="absolute left-0 w-full" style={{ top: '22%', height: '7%' }}>
-          <div className="h-full w-[5px] rounded-l-[3px]" style={{
-            background: 'linear-gradient(90deg, #7A756F 0%, #B0AAA2 40%, #9E9890 70%, #8A8680 100%)',
-            boxShadow: '-1px 0 2px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.1)',
-          }} />
-        </div>
-        {/* Volume Down */}
-        <div className="absolute left-0 w-full" style={{ top: '31%', height: '7%' }}>
-          <div className="h-full w-[5px] rounded-l-[3px]" style={{
-            background: 'linear-gradient(90deg, #7A756F 0%, #B0AAA2 40%, #9E9890 70%, #8A8680 100%)',
-            boxShadow: '-1px 0 2px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.1)',
-          }} />
-        </div>
-      </div>
-
-      {/* === Front face — Titanium Frame + Screen === */}
-      <div className="absolute inset-0 rounded-[3.8rem] titanium-frame p-[4px] z-10">
+      {/* Titanium Frame */}
+      <div className="absolute inset-0 rounded-[3.8rem] titanium-frame p-[4px]">
         <div className="absolute inset-[4px] rounded-[3.6rem] iphone-screen-border p-[10px]">
           <div className="w-full h-full bg-white rounded-[3rem] overflow-hidden relative flex flex-col">
             {/* Dynamic Island */}
@@ -414,6 +335,11 @@ function AnimatedIPhone() {
           </div>
         </div>
 
+        {/* Physical Buttons */}
+        <div className="absolute top-[105px] -left-[2px] w-[3px] h-8 titanium-button rounded-l-[1px]" />
+        <div className="absolute top-[155px] -left-[2px] w-[3px] h-14 titanium-button rounded-l-[1px]" />
+        <div className="absolute top-[222px] -left-[2px] w-[3px] h-14 titanium-button rounded-l-[1px]" />
+        <div className="absolute top-[185px] -right-[2px] w-[3px] h-20 titanium-button rounded-r-[1px]" />
       </div>
 
       {/* Glare */}
