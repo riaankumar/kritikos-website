@@ -5,35 +5,35 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: 'What is K-12 Intelligence?',
-    a: 'K-12 Intelligence means turning fragmented school data into actionable insights for everyone: teachers, parents, and administrators. Kritikos connects to your existing tools (PowerSchool, Canvas, Google Classroom, and more) and builds a unified knowledge graph of every student. Instead of logging into six platforms, you get answers via iMessage, WhatsApp, or text.',
+    a: 'Your school already has the data. Canvas knows assignments. PowerSchool knows grades. Google Classroom knows submissions. But none of these talk to each other. K-12 Intelligence connects all of it and gives you answers through a simple text. No new app, no new dashboard.',
   },
   {
-    q: 'How does Kritikos connect to our existing tools?',
-    a: 'Kritikos reads from your SIS, LMS, and communication tools via secure APIs and roster sync through Clever or ClassLink. We support PowerSchool, Infinite Campus, Canvas, Google Classroom, Schoology, and more. No data migration needed. We layer intelligence on top of your existing software.',
+    q: 'How does it work with the tools we already use?',
+    a: 'Kritikos plugs into the tools your school already runs: PowerSchool, Canvas, Google Classroom, Infinite Campus, Schoology, and more. We connect through Clever or ClassLink. Nothing changes for your staff. We just make everything smarter.',
   },
   {
-    q: 'How is student data protected?',
-    a: 'Kritikos is FERPA compliant and signs a Data Protection Agreement with every school. We use read-only API access, meaning we never modify your source systems. All data is encrypted in transit and at rest. We do not sell or share student data with third parties. SOC 2 certification is in progress.',
+    q: 'Is student data safe?',
+    a: 'Yes. We are FERPA compliant and sign a Data Protection Agreement with every school. We only read your data, we never change it. Everything is encrypted. We never sell or share student information. SOC 2 certification is in progress.',
   },
   {
-    q: 'How long does setup take?',
-    a: 'Most schools go live in under 2 weeks. We handle the entire setup. Your IT team just authorizes the API connections. Zero migration required since Kritikos reads from your existing tools, not replaces them.',
+    q: 'How long does it take to get started?',
+    a: 'Most schools are up and running in under 2 weeks. We handle the setup. Your IT team just says yes to the connections. Nothing to migrate, nothing to install.',
   },
   {
-    q: 'What makes this different from dashboards and analytics tools?',
-    a: 'Dashboards add another screen to check. Kritikos delivers intelligence through the conversations already happening: iMessage, WhatsApp, and text. Teachers text a question and get a student rundown in seconds. Parents receive proactive weekly digests. Administrators ask anything in plain English. No logins, no training, no app to download.',
+    q: 'How is this different from another dashboard?',
+    a: 'Dashboards give you another screen to check. Kritikos gives you answers where you already are: iMessage, WhatsApp, or text. Ask a question, get an answer. No logins, no training, no app to download.',
   },
   {
-    q: 'Do teachers or parents need to learn anything new?',
-    a: 'No. If you can send a text, you can use Kritikos. Teachers get student rundowns, pre-drafted parent emails, and flagged concerns delivered as messages. Parents receive updates and can reply to ask questions. Notes can even be logged via voice call. Zero learning curve.',
+    q: 'Do teachers or parents need training?',
+    a: 'If you can text, you can use Kritikos. Teachers get student updates, drafted parent emails, and flagged concerns as messages. Parents get weekly digests and can reply with questions. That is it.',
   },
   {
-    q: 'What can administrators ask Kritikos?',
-    a: 'Anything. "Show me attendance trends for 9th grade." "Which interventions are working for ELL students?" "How is Marcus doing across all his classes?" Kritikos synthesizes data from every connected system and returns instant, shareable summaries in natural language.',
+    q: 'What can I ask Kritikos?',
+    a: 'Everything. "How is Marcus doing?" "Give me a rundown on Period 3." "Show me attendance for 9th grade." "Which students are falling behind?" "Draft an email to Sarah\'s parents." It pulls from every connected tool and gives you a clear answer in seconds.',
   },
   {
-    q: 'How is Kritikos priced?',
-    a: 'We offer a teacher freemium tier, school enterprise licensing, and district-wide deployment options. During the pilot program, qualifying schools get free access. Reach out and we will build a plan based on your school or district size.',
+    q: 'How much does it cost?',
+    a: 'Teachers can start for free. Schools and districts get custom pricing based on size. During our pilot, qualifying schools get full access at no cost. Reach out and we will figure out what works for you.',
   },
 ]
 
