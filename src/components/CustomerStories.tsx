@@ -22,8 +22,8 @@ const stories = [
   {
     metric: '2',
     unit: 'min',
-    headline: 'Morning admin reduced from 63 minutes',
-    quote: '"My mornings went from an hour of logging in everywhere to two minutes reading a text. I actually teach now."',
+    headline: 'Admin time reduced from 63 minutes',
+    quote: '"I went from an hour of logging in everywhere to two minutes reading a text. I actually teach now."',
     author: 'Teacher',
     org: 'Private Beta Participant',
     color: 'from-amber-500 to-orange-600',
@@ -37,7 +37,7 @@ const testimonials = [
     org: 'K-12 District',
   },
   {
-    quote: '"My students actually know what\'s due now. The daily text companion changed the game."',
+    quote: '"I used to spend my prep period on emails and grade lookups. Now I actually prep."',
     author: 'High School Teacher',
     org: 'Private Beta',
   },

@@ -41,7 +41,7 @@ const tabs = [
       { type: 'user', text: "Show me attendance trends for 9th grade this month." },
       { type: 'ai', text: "9th grade attendance is at 91.3%, up 2.1% from last month. Chronic absenteeism dropped from 18% to 14.2%. Three students flagged for early intervention." },
       { type: 'user', text: "What interventions are working?" },
-      { type: 'ai', text: "Parent text outreach shows 73% response rate and 2.4x higher re-engagement vs email. Students receiving morning nudges improved attendance by 18%." },
+      { type: 'ai', text: "Parent text outreach shows 73% response rate and 2.4x higher re-engagement vs email. Students receiving proactive nudges improved attendance by 18%." },
     ],
   },
   {

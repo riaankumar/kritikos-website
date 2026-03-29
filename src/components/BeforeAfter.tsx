@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion'
 
 const without = [
-  { time: '6:45', task: 'Log into PowerSchool to check attendance' },
-  { time: '6:52', task: 'Open Canvas for missing assignments' },
-  { time: '7:08', task: 'Cross-reference IEP accommodations' },
-  { time: '7:20', task: 'Draft parent email for Marcus' },
-  { time: '7:35', task: 'Check Google Classroom for submissions' },
-  { time: '7:48', task: 'Log behavior note from yesterday' },
+  { step: 1, task: 'Log into PowerSchool to check attendance' },
+  { step: 2, task: 'Open Canvas for missing assignments' },
+  { step: 3, task: 'Cross-reference IEP accommodations' },
+  { step: 4, task: 'Draft parent email about a struggling student' },
+  { step: 5, task: 'Check Google Classroom for submissions' },
+  { step: 6, task: 'Log a behavior note from earlier' },
 ]
 
 const withK = [
-  { time: '7:15', task: 'Receive student rundown from Kritikos' },
-  { time: '7:16', task: 'Reply SEND to deliver parent emails' },
-  { time: '7:17', task: 'Done. Start teaching.' },
+  { step: 1, task: 'Text Kritikos for a rundown' },
+  { step: 2, task: 'Reply SEND to deliver parent emails' },
+  { step: 3, task: 'Done. Back to teaching.' },
 ]
 
 export default function BeforeAfter() {
@@ -54,7 +54,7 @@ export default function BeforeAfter() {
                   transition={{ duration: 0.3, delay: i * 0.08 }}
                   className="flex items-start gap-4 py-3 border-b border-red-100/50 last:border-0"
                 >
-                  <span className="text-xs font-mono text-accent-red/70 w-10 shrink-0 pt-0.5">{item.time}</span>
+                  <span className="text-xs font-mono text-accent-red/70 w-6 shrink-0 pt-0.5">{item.step}</span>
                   <span className="text-sm text-navy">{item.task}</span>
                 </motion.div>
               ))}
@@ -88,7 +88,7 @@ export default function BeforeAfter() {
                   transition={{ duration: 0.3, delay: i * 0.12 }}
                   className="flex items-start gap-4 py-3 border-b border-green-100/50 last:border-0"
                 >
-                  <span className="text-xs font-mono text-accent-green/70 w-10 shrink-0 pt-0.5">{item.time}</span>
+                  <span className="text-xs font-mono text-accent-green/70 w-6 shrink-0 pt-0.5">{item.step}</span>
                   <span className="text-sm text-navy font-medium">{item.task}</span>
                 </motion.div>
               ))}

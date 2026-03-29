@@ -2,15 +2,10 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const chatMessages = [
-  { type: 'user', text: 'How are Emma, Aryan, and Tyler doing today?' },
-  { type: 'ai', text: 'Emma is in the 94th percentile. Aryan and Tyler show significant growth in quantitative reasoning benchmarks.' },
-  { type: 'chart', data: [
-    { name: 'Emma', pct: 65, growth: '+12.4%' },
-    { name: 'Aryan', pct: 92, growth: '+9.1%' },
-    { name: 'Tyler', pct: 78, growth: '+7.8%' },
-  ]},
-  { type: 'user', text: "How is Emma's growth compared to district medians?" },
-  { type: 'ai', text: "Emma is currently in the 94th percentile. Her growth rate is 2.3x the district median across all assessed subjects." },
+  { type: 'user', text: 'Give me a rundown on my Period 3 class.' },
+  { type: 'ai', text: '3 students flagged: Marcus (2 missing assignments), Emma (attendance drop this week), Tyler (IEP review due Friday). 2 parent emails drafted.' },
+  { type: 'user', text: 'Send the parent emails and log a positive note for Marcus.' },
+  { type: 'ai', text: "Done! Both emails sent. Behavior note logged for Marcus: positive participation. That's his 3rd this month." },
 ]
 
 export default function Hero() {
@@ -41,16 +36,16 @@ export default function Hero() {
             className="text-5xl md:text-[76px] leading-[0.95] text-navy tracking-tight font-normal"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
-            True Learning,{' '}
+            The AI Teaching{' '}
             <br />
-            Accelerated by{' '}
+            Assistant on{' '}
             <motion.span
               className="italic gradient-text"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Intelligence.
+              iMessage.
             </motion.span>
           </motion.h1>
 
@@ -60,13 +55,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-4"
           >
-            <h2 className="text-lg font-semibold text-navy leading-tight">
-              Your School Data. One Unified Thread.
-            </h2>
             <p className="text-base leading-relaxed text-muted max-w-lg">
-              We ingest and synthesize data from your SIS, LMS, and CRM to
-              uncover invisible patterns, empowering you to take action
-              right from a text or call.
+              Teachers spend 29 hours a week on admin instead of teaching.
+              Kritikos connects every school tool and delivers what matters
+              straight to your messages. For teachers and parents.
             </p>
           </motion.div>
 
@@ -206,38 +198,6 @@ function AnimatedIPhone() {
                       className="self-start max-w-[88%] bg-[#1C1C1E] text-zinc-100 px-3.5 py-2.5 rounded-[1.2rem] rounded-tl-[0.3rem] text-[12px] leading-snug border border-white/5"
                     >
                       {msg.text}
-                    </motion.div>
-                  )
-                }
-
-                if (msg.type === 'chart' && msg.data) {
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.8, y: 12 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="self-start w-[85%] bg-[#1C1C1E] p-4 rounded-[1.2rem] border border-white/5 space-y-3"
-                    >
-                      <div className="flex justify-between items-end h-20 gap-2">
-                        {msg.data.map((s, si) => (
-                          <div key={s.name} className="flex-1 flex flex-col items-center gap-1.5">
-                            <div className="w-full bg-zinc-800 rounded-t-md relative overflow-hidden" style={{ height: `${s.pct}%` }}>
-                              <motion.div
-                                initial={{ height: 0 }}
-                                animate={{ height: '100%' }}
-                                transition={{ duration: 0.8, delay: si * 0.15, ease: 'easeOut' }}
-                                className={`absolute bottom-0 w-full rounded-t-md ${si === 0 ? 'bg-primary/50' : si === 1 ? 'bg-primary' : 'bg-primary/70'}`}
-                              />
-                            </div>
-                            <span className="text-[8px] text-zinc-500 font-medium">{s.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="border-t border-zinc-800/50 pt-2 flex justify-between items-center">
-                        <span className="text-[9px] text-zinc-400">Quantitative Growth</span>
-                        <span className="text-[9px] text-primary font-bold">+18.4%</span>
-                      </div>
                     </motion.div>
                   )
                 }
