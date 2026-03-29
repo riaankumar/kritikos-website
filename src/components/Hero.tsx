@@ -151,22 +151,49 @@ function AnimatedIPhone() {
             </div>
 
             {/* Status Bar */}
-            <div className="flex justify-between items-center px-8 pt-14 pb-2">
+            <div className="flex justify-between items-center px-7 pt-14 pb-1">
               <span className="text-[11px] text-black font-semibold">9:41</span>
-              <div className="flex gap-1 items-center">
-                <div className="flex gap-[2px]">
-                  {[4,6,8,10].map(h => <div key={h} className="w-[3px] bg-black rounded-full" style={{ height: h }} />)}
+              <div className="flex gap-1.5 items-center">
+                {/* Cellular bars */}
+                <div className="flex gap-[2px] items-end">
+                  {[4, 6, 8, 10].map(h => <div key={h} className="w-[3px] bg-black rounded-full" style={{ height: h }} />)}
                 </div>
-                <svg className="w-3 h-3 text-black ml-1" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2" /><rect x="20" y="9" width="3" height="6" rx="1" /></svg>
+                {/* WiFi icon */}
+                <svg className="w-[13px] h-[13px] text-black" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 18c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm-4.24-3.66a5.94 5.94 0 0 1 8.48 0l1.42-1.42a7.93 7.93 0 0 0-11.32 0l1.42 1.42zm-2.83-2.83a9.89 9.89 0 0 1 14.14 0l1.41-1.41c-4.69-4.69-12.28-4.69-16.97 0l1.42 1.41z" />
+                </svg>
+                {/* Battery */}
+                <svg className="w-[18px] h-[10px] text-black ml-0.5" viewBox="0 0 25 12" fill="currentColor">
+                  <rect x="0" y="0.5" width="21" height="11" rx="2" ry="2" fill="none" stroke="currentColor" strokeWidth="1" />
+                  <rect x="1.5" y="2" width="18" height="8" rx="1" ry="1" />
+                  <rect x="22" y="3.5" width="2.5" height="5" rx="1" ry="1" opacity="0.4" />
+                </svg>
               </div>
             </div>
 
-            {/* Chat Header */}
-            <div className="flex flex-col items-center space-y-1 pb-3 border-b border-gray-200">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#007AFF] to-[#0055D4] flex items-center justify-center text-white font-bold text-sm shadow-md">
-                K
+            {/* Chat Header — iMessage style */}
+            <div className="relative flex items-center justify-between px-4 pb-2.5 pt-1 border-b border-gray-200">
+              {/* Back button */}
+              <div className="flex items-center gap-0.5 min-w-[60px]">
+                <svg className="w-[18px] h-[18px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+                <span className="text-[13px] text-[#007AFF]">12</span>
               </div>
-              <span className="text-[11px] text-gray-500 font-medium">Kritikos AI</span>
+              {/* Center — Avatar + Name */}
+              <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#007AFF] to-[#5856D6] flex items-center justify-center text-white font-semibold text-[11px] shadow-sm">
+                  K
+                </div>
+                <span className="text-[10px] text-black font-semibold mt-0.5">Kritikos AI</span>
+              </div>
+              {/* Right — FaceTime button */}
+              <div className="min-w-[60px] flex justify-end">
+                <svg className="w-[22px] h-[22px] text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg>
+              </div>
             </div>
 
             {/* Messages */}
