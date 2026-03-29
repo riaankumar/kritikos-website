@@ -56,12 +56,10 @@ export default function Hero() {
             className="space-y-3"
           >
             <p className="text-base font-semibold text-navy">
-              Your School Data. One Unified Thread.
+              Your entire school, in one chat.
             </p>
             <p className="text-base leading-relaxed text-muted max-w-lg">
-              We ingest and synthesize data from your SIS, LMS, and CRM to
-              uncover invisible patterns, empowering administrators, districts,
-              teachers, and parents to take action right from a text or call.
+              Ask anything. Get instant answers about any student, any classroom, any metric — delivered via iMessage, WhatsApp, or SMS.
             </p>
           </motion.div>
 

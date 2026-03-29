@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import { CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
 
 const checklist = [
-  '48hr response time after application',
-  'Connects SIS, LMS, IEP and more',
-  'Limited spots, private beta',
+  "We'll personally reach out within 48 hours",
+  'Works with the tools your school already uses',
+  'Only a few pilot spots left',
 ]
 
 export default function TrialForm() {
@@ -33,7 +33,7 @@ export default function TrialForm() {
                 Start a pilot<br />in your school.
               </h2>
               <p className="text-muted text-base mt-4 max-w-md">
-                Tell us about your school. We'll review your application and get back to you within 48 hours.
+                Tell us a bit about your school and we'll personally reach out to help you get started.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export default function TrialForm() {
             {/* Testimonial */}
             <div className="bg-white rounded-2xl p-6 border border-outline/40">
               <p className="text-sm text-navy leading-relaxed italic">
-                "Kritikos gave our teachers 10+ hours back per week by automating the admin work that was pulling them away from students."
+                "Setup was painless and our teachers were using it the same week. They finally have time to focus on what matters: their students."
               </p>
               <div className="flex items-center gap-3 mt-4">
                 <div className="w-8 h-8 rounded-full bg-primary-light flex items-center justify-center text-primary text-xs font-bold">A</div>
@@ -84,7 +84,7 @@ export default function TrialForm() {
                   <Sparkles className="text-accent-green" size={28} />
                 </div>
                 <h3 className="text-2xl text-navy mb-3" style={{ fontFamily: "'Instrument Serif', serif" }}>Response Received</h3>
-                <p className="text-muted text-sm">We'll get back to you within 48 hours.</p>
+                <p className="text-muted text-sm">We'll personally reach out within 48 hours to get you set up.</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 md:p-10 border border-outline/40 shadow-xl space-y-6">
