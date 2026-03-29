@@ -71,12 +71,9 @@ export default function Districts() {
           <p className="text-xl md:text-2xl text-white leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: "'Instrument Serif', serif" }}>
             "Kritikos gave our teachers 10+ hours back per week by automating the admin work that was pulling them away from students. It's like having an extra staff member for every teacher."
           </p>
-          <div className="flex items-center justify-center gap-3 mt-8">
-            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-white text-sm font-bold">A</div>
-            <div className="text-left">
-              <div className="text-white text-sm font-medium">Administrator</div>
-              <div className="text-zinc-400 text-xs">K-12 District, Private Beta</div>
-            </div>
+          <div className="mt-8 pt-6 border-t border-white/10">
+            <div className="text-white text-sm font-medium">Administrator</div>
+            <div className="text-zinc-400 text-xs mt-0.5">K-12 District, Private Beta</div>
           </div>
         </motion.div>
 

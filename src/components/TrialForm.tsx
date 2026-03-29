@@ -90,12 +90,9 @@ export default function TrialForm() {
               <p className="text-sm text-navy leading-relaxed italic">
                 "Setup was painless and our teachers were using it the same week. They finally have time to focus on what matters: their students."
               </p>
-              <div className="flex items-center gap-3 mt-4">
-                <div className="w-8 h-8 rounded-full bg-primary-light flex items-center justify-center text-primary text-xs font-bold">A</div>
-                <div>
-                  <div className="text-sm font-medium text-navy">Administrator</div>
-                  <div className="text-xs text-muted">K-12 District, Private Beta</div>
-                </div>
+              <div className="mt-4 pt-4 border-t border-outline/20">
+                <div className="text-xs font-semibold text-navy">Administrator</div>
+                <div className="text-[11px] text-muted mt-0.5">K-12 District, Private Beta</div>
               </div>
             </div>
           </motion.div>
