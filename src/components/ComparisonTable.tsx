@@ -54,8 +54,8 @@ export default function ComparisonTable() {
             <br />
             It's the entire approach.
           </h2>
-          <p className="text-muted text-lg mt-4 max-w-2xl mx-auto">
-            Traditional EdTech gives teachers more tools. Kritikos gives them back their time.
+          <p className="text-muted text-base md:text-lg mt-4 max-w-2xl mx-auto">
+            Traditional EdTech gives teachers more tools. Kritikos gives them back&nbsp;their&nbsp;time.
           </p>
         </motion.div>
 

@@ -42,7 +42,7 @@ export default function LogoTicker() {
               key={`${logo.name}-${i}`}
               src={logo.src}
               alt={logo.name}
-              className="h-8 object-contain transition-all duration-300 hover:scale-110"
+              className={`object-contain transition-all duration-300 hover:scale-110 ${logo.name === 'Canvas' ? 'h-10' : 'h-8'}`}
               loading="lazy"
             />
           ))}

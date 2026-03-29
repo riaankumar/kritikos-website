@@ -4,7 +4,7 @@ import { useAnimatedCounter } from '../hooks/useInView'
 const stats = [
   { value: 12, suffix: ' hrs', label: 'Wasted per teacher, per week', desc: 'Spent on non-teaching tasks like emails, grade lookups, and administrative work.', color: 'text-accent-red' },
   { value: 67, suffix: '%', label: 'Software goes unused', desc: 'Student licenses wasted because data is spread across too many disconnected tools.', color: 'text-amber-500' },
-  { value: 190, suffix: 'B', prefix: '$', label: 'ESSER funding expiring', desc: 'Federal COVID-relief ending. Districts must prove their software tools deliver ROI now.', color: 'text-primary' },
+  { value: 73, suffix: '%', label: 'Parents feel uninformed', desc: 'Most parents say they don\'t get timely updates on their child\'s progress from school.', color: 'text-primary' },
 ]
 
 function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {

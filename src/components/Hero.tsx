@@ -17,7 +17,7 @@ export default function Hero() {
 
       <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center py-12 lg:py-0">
         {/* Left Content */}
-        <div className="lg:col-span-5 z-10 space-y-8">
+        <div className="lg:col-span-5 z-10 space-y-5">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -36,16 +36,16 @@ export default function Hero() {
             className="text-5xl md:text-[76px] leading-[0.95] text-navy tracking-tight font-normal"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
-            The AI Teaching{' '}
+            AI Personalized{' '}
             <br />
-            Assistant on{' '}
+            Assistants for{' '}
             <motion.span
               className="italic gradient-text"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              iMessage.
+              K-12.
             </motion.span>
           </motion.h1>
 
@@ -53,12 +53,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-4"
+            className="space-y-3"
           >
+            <p className="text-base font-semibold text-navy">
+              Your School Data. One Unified Thread.
+            </p>
             <p className="text-base leading-relaxed text-muted max-w-lg">
-              Teachers spend 29 hours a week on admin instead of teaching.
-              Kritikos connects every school tool and delivers what matters
-              straight to your messages. For teachers and parents.
+              We ingest and synthesize data from your SIS, LMS, and CRM to
+              uncover invisible patterns, empowering administrators, districts,
+              teachers, and parents to take action right from a text or call.
             </p>
           </motion.div>
 

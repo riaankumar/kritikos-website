@@ -83,8 +83,8 @@ export default function TrialForm() {
                 <div className="w-16 h-16 rounded-full bg-accent-green/10 flex items-center justify-center mx-auto mb-6">
                   <Sparkles className="text-accent-green" size={28} />
                 </div>
-                <h3 className="text-2xl text-navy mb-3" style={{ fontFamily: "'Instrument Serif', serif" }}>Application Received</h3>
-                <p className="text-muted text-sm">We'll review your application and get back to you within 48 hours.</p>
+                <h3 className="text-2xl text-navy mb-3" style={{ fontFamily: "'Instrument Serif', serif" }}>Response Received</h3>
+                <p className="text-muted text-sm">We'll get back to you within 48 hours.</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 md:p-10 border border-outline/40 shadow-xl space-y-6">
