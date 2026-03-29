@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: 'How much does it cost?',
-    a: 'Teachers can start for free. Schools and districts get custom pricing based on size. During our pilot, qualifying schools get full access at no cost. Reach out and we will figure out what works for you.',
+    a: 'School districts get custom pricing based on size and needs. We start with a pilot to prove impact, then move to full adoption. Reach out and we will build a plan that works for your district.',
   },
 ]
 
