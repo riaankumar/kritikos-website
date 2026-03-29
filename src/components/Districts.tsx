@@ -91,7 +91,7 @@ export default function Districts() {
             Every hour a teacher spends toggling between platforms is an hour taken from the students who need them most.
           </p>
           <a
-            href="https://calendly.com/riaankumar/kritikos-demo"
+            href="https://cal.com/riaan-kumar-eh40tw/kritikos-demo"
             className="inline-flex bg-primary text-white px-8 py-3.5 rounded-full font-medium text-sm hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95"
           >
             Talk to Us

@@ -71,7 +71,7 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-4 pt-2"
           >
             <a
-              href="https://calendly.com/riaankumar/kritikos-demo"
+              href="https://cal.com/riaan-kumar-eh40tw/kritikos-demo"
               className="group relative bg-primary text-white px-8 py-3.5 rounded-2xl font-medium text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.97] shimmer-effect"
             >
               Request Access

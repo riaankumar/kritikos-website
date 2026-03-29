@@ -17,7 +17,7 @@ export default function Footer() {
           Join the private beta. Zero migration. Go live in under 2 weeks.
         </p>
         <a
-          href="https://calendly.com/riaankumar/kritikos-demo"
+          href="https://cal.com/riaan-kumar-eh40tw/kritikos-demo"
           className="group relative inline-flex bg-primary text-white px-10 py-4 rounded-2xl font-medium text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.97]"
         >
           Request a Demo

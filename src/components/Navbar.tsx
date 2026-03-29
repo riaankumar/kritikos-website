@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="https://calendly.com/riaankumar/kritikos-demo"
+          href="https://cal.com/riaan-kumar-eh40tw/kritikos-demo"
           className="hidden md:block bg-primary text-white px-6 py-2 rounded-2xl text-sm font-medium shadow-md shadow-primary/15 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.97]"
         >
           Request a Demo
@@ -105,7 +105,7 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a href="https://calendly.com/riaankumar/kritikos-demo" className="block bg-primary text-white px-6 py-3 rounded-2xl text-sm font-medium text-center mt-4 shadow-md shadow-primary/15 active:scale-[0.97] transition-all duration-300">
+              <a href="https://cal.com/riaan-kumar-eh40tw/kritikos-demo" className="block bg-primary text-white px-6 py-3 rounded-2xl text-sm font-medium text-center mt-4 shadow-md shadow-primary/15 active:scale-[0.97] transition-all duration-300">
                 Request a Demo
               </a>
             </div>
