@@ -2,16 +2,42 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
-const links = ['Platform', 'Products', 'Features', 'Trial']
+const links = [
+  { label: 'Platform', href: '#platform' },
+  { label: 'Products', href: '#products' },
+  { label: 'Features', href: '#features' },
+  { label: 'Trial', href: '#trial' },
+]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('platform')
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handler, { passive: true })
-    return () => window.removeEventListener('scroll', handler)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20)
+
+      // Find which section is currently in view
+      const sections = links.map(l => l.href.slice(1))
+      let current = sections[0]
+
+      for (const id of sections) {
+        const el = document.getElementById(id)
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          // Section is "active" when its top is above the middle of viewport
+          if (rect.top <= 200) {
+            current = id
+          }
+        }
+      }
+      setActiveSection(current)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll() // initial check
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
@@ -23,16 +49,26 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center bg-zinc-100/80 rounded-full px-1 py-1 gap-1">
-          {links.map((link, i) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className={`px-5 py-1.5 text-sm font-medium rounded-full transition-all ${i === 0 ? 'bg-white shadow-sm text-navy' : 'text-muted hover:text-navy'}`}
-            >
-              {link}
-            </a>
-          ))}
+        <div className="hidden md:flex items-center bg-zinc-100/80 rounded-full px-1 py-1 gap-1 relative">
+          {links.map(link => {
+            const isActive = activeSection === link.href.slice(1)
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${isActive ? 'text-navy' : 'text-muted hover:text-navy'}`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 bg-white shadow-sm rounded-full"
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{link.label}</span>
+              </a>
+            )
+          })}
         </div>
 
         {/* CTA */}
@@ -60,8 +96,13 @@ export default function Navbar() {
           >
             <div className="px-6 py-4 space-y-3">
               {links.map(link => (
-                <a key={link} href={`#${link.toLowerCase()}`} className="block text-sm text-navy font-medium py-2" onClick={() => setMobileOpen(false)}>
-                  {link}
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`block text-sm font-medium py-2 ${activeSection === link.href.slice(1) ? 'text-primary' : 'text-navy'}`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
                 </a>
               ))}
               <a href="https://calendly.com/riaankumar/kritikos-demo" className="block bg-navy text-white px-6 py-3 rounded-full text-sm font-medium text-center mt-4">
