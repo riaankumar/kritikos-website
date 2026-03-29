@@ -10,10 +10,10 @@ const stories = [
     org: 'K-12 District, Private Beta',
   },
   {
-    metric: '73%',
+    metric: '60%',
     unit: '',
     label: 'Parent response rate via text',
-    quote: "We went from 12% email open rates to 73% response rates overnight. Parents are finally in the loop.",
+    quote: "We went from 12% email open rates to 60% response rates overnight. Parents are finally in the loop.",
     author: 'School Principal',
     org: 'Private Beta School',
   },
