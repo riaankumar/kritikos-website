@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="absolute inset-0 gradient-mesh -z-10" />
       <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary-light/40 via-transparent to-transparent pointer-events-none -z-10" />
 
-      <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center py-12 lg:py-0">
+      <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center py-12 lg:py-0">
         {/* Left Content */}
         <div className="lg:col-span-5 z-10 space-y-5">
           {/* Badge */}
@@ -55,11 +55,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-3"
           >
-            <p className="text-base font-semibold text-navy">
+            <p className="text-lg font-semibold text-navy">
               Your entire school, in one chat.
             </p>
-            <p className="text-base leading-relaxed text-muted max-w-lg">
-              Ask anything. Get instant answers about any student, any classroom, any metric — delivered via iMessage, WhatsApp, or SMS.
+            <p className="text-lg leading-relaxed text-muted max-w-lg">
+              Ask anything. Get instant answers about any student, any classroom, any metric, delivered via iMessage, WhatsApp, or SMS.
             </p>
           </motion.div>
 
