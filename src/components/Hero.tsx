@@ -250,13 +250,18 @@ function AnimatedIPhone() {
             </div>
 
             {/* iMessage bar */}
-            <div className="px-3 pb-2">
-              <div className="flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2 border border-gray-200">
-                <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
-                <span className="text-[11px] text-gray-400 flex-1">iMessage</span>
-                <div className="w-6 h-6 rounded-full bg-[#007AFF] flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" /></svg>
-                </div>
+            <div className="flex items-center gap-1.5 px-3 pb-2">
+              {/* Plus button */}
+              <div className="w-7 h-7 rounded-full bg-[#E5E5EA] flex items-center justify-center shrink-0">
+                <svg className="w-4 h-4 text-[#8E8E93]" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+              </div>
+              {/* Text field */}
+              <div className="flex-1 flex items-center bg-white rounded-full px-3 py-1.5 border border-[#C7C7CC]">
+                <span className="text-[12px] text-[#C7C7CC] flex-1">iMessage</span>
+              </div>
+              {/* Send button */}
+              <div className="w-7 h-7 rounded-full bg-[#007AFF] flex items-center justify-center shrink-0">
+                <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
               </div>
             </div>
 
